@@ -1,0 +1,46 @@
+# Aliases for launching applications
+alias vlc='open -a VLC'
+alias seedbox='ssh -2 username@servername'
+alias mdown='open -a Byword'
+alias mpreview='open -a Marked'
+alias notes="open -a nvALT"
+
+# Aliases for standard commands
+alias l='ls -alh'
+alias ls="ls -G"
+alias lss="ls -l"
+alias grep="grep --color=auto"
+alias lsl="l -t | less"
+alias c="clear"
+
+# Typing is hard
+alias cd..="cd .."
+alias ..="cd .."
+alias .2="cd ../.."
+alias ...="cd ../.."
+alias .3="cd ../../.."
+alias ....="cd ../../.."
+alias .4="cd ../../../.."
+alias .....="cd ../../../.."
+
+# Some days are better than others
+alias "die-in-a-fire"="vagrant destroy"
+alias HenryV='git commit -am "Once more unto the breach, dear friends," && git push -f origin master'
+alias kthxbai='exit'
+
+# I read numbers like a human
+alias du='du -h'
+alias df='df -h'
+
+# Random Password Generation
+alias randpass="openssl rand -base64 12"
+
+# Git shortcuts
+alias gs="git status" # Always used, shutup OCD. shutup OCD. shutup OCD.
+
+# Show/hide hidden files in Finder
+alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+
+# Todo.sh joy, because...you know...text is kinda rad and stuff
+alias t='todo.sh'
