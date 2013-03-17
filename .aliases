@@ -1,3 +1,12 @@
+# Some days are better than others
+alias die-in-a-fire="vagrant destroy"
+alias HenryV='git commit -am "Once more unto the breach, dear friends," && git push -f origin master'
+alias kthxbai='exit'
+
+# Show/Hide Desktop icons during presentations or when overwhelmed
+alias HideDesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
+alias ShowDesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+
 # Aliases for launching applications
 alias vlc='open -a VLC'
 alias seedbox='ssh -2 username@servername'
@@ -22,11 +31,6 @@ alias .3="cd ../../.."
 alias ....="cd ../../.."
 alias .4="cd ../../../.."
 alias .....="cd ../../../.."
-
-# Some days are better than others
-alias "die-in-a-fire"="vagrant destroy"
-alias HenryV='git commit -am "Once more unto the breach, dear friends," && git push -f origin master'
-alias kthxbai='exit'
 
 # I read numbers like a human
 alias du='du -h'
