@@ -19,5 +19,8 @@ export TODOTXT_AUTO_ARCHIVE=0
 source todo_completion
 complete -F _todo t
 
+# hub alias
+eval "$(hub alias -s)"
+
 # RVM joy, yo.
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
