@@ -9,7 +9,7 @@ alias ShowDesktop="defaults write com.apple.finder CreateDesktop -bool true && k
 
 # Aliases for launching applications
 alias vlc='open -a VLC'
-alias seedbox='ssh -2 username@servername'
+alias seedbox='ssh -2 '
 alias mdown='open -a Byword'
 alias mpreview='open -a Marked'
 alias notes="open -a nvALT"
@@ -46,5 +46,3 @@ alias gs="git status" # Always used, shutup OCD. shutup OCD. shutup OCD.
 alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
 alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
 
-# Todo.sh joy, because...you know...text is kinda rad and stuff
-alias t='todo.sh'

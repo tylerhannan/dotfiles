@@ -1,5 +1,5 @@
 ##
-export PATH=/opt/local/bin:/opt/local/sbin:~/bin:/Users/tylerhannan/Dropbox/todo:$PATH
+export PATH=/opt/local/bin:/opt/local/sbin:~/bin:$PATH
 
 # Load the shell dotfiles, and then some:
 # * ~/.extra can be used for other settings you don’t want to commit.
@@ -12,12 +12,6 @@ unset file
 export HISTCONTROL=erasedups 
 export HISTSIZE=10000
 shopt -s histappend
-
-# todotxt configuration elements
-export TODOTXT_DEFAULT_ACTION=ls
-export TODOTXT_AUTO_ARCHIVE=0
-source todo_completion
-complete -F _todo t
 
 # hub alias
 eval "$(hub alias -s)"
