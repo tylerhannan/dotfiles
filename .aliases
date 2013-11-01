@@ -9,7 +9,7 @@ alias ShowDesktop="defaults write com.apple.finder CreateDesktop -bool true && k
 
 # Aliases for launching applications
 alias vlc='open -a VLC'
-alias seedbox='ssh -2 viqbang@tartarus.feralhosting.com'
+alias seedbox='ssh -2 user@server'
 alias mdown='open -a Byword'
 alias mpreview='open -a Marked'
 alias notes="open -a nvALT"
