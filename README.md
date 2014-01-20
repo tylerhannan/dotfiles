@@ -4,10 +4,17 @@ I get rather tired of resetting my machine every time I change, and/or inadverte
 
 It is extraordinarily tempting to script much of the below...but, frankly, there are situations where it is disconcerting.  The flexibility to step through, install by install, ensures that I don't do something horrifically stupid.
 
+This includes the following Vim plugins (ask me some time why they are no longer submodules)
+* [NERD Tree](https://github.com/scrooloose/nerdtree)
+* [vim-colors-solarized](https://github.com/altercation/vim-colors-solarized)
+* [vim-easymotion](https://github.com/Lokaltog/vim-easymotion)
+* [vim-markdown](https://github.com/plasticboy/vim-markdown)
+* [writer.vim](https://github.com/dsanson/writer.vim)
+
 Setup
 -----
 
-This assumes you have installed all recent updates and XCode and/or "Command Line Tools"
+Start by installing XCode and ["Command Line Tools"](http://railsapps.github.io/xcode-command-line-tools.html)
 
 ### Start at the beginning
 
@@ -25,7 +32,6 @@ brew install par
 ```sh
 git config --global user.name "Your Name Here"
 git config --blobal user.email email@domain.com
-cd ~
 git clone https://github.com/tylerhannan/dotfiles.git
 cd dotfiles
 source bootstrap.sh
@@ -80,11 +86,9 @@ Some to remember:
 * Reddit Enhancement Suite
 * Reddit Hover Craft
 
-### Last Bits of Joy
+### Install the Vim Thesaurus
 
-These are simple things that either embedding as submodules or tracking in repository are a silly idea
-
-Install the Vim thesaurus
+These are simple things that would be silly to embed as a submodule or track in a repository 
 
 ```sh
 cd ~/.vim
