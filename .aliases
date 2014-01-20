@@ -18,8 +18,8 @@ alias mpreview='open -a Marked'
 alias notes="open -a nvALT"
 
 # Aliases for things that require them
-alias seedbox='ssh -2 viqbang@dionysus.feralhosting.com'
-alias tunnel="screen ssh -2 -D 55555 viqbang@dionysus.feralhosting.com"
+alias seedbox='ssh -2 '
+alias tunnel="screen ssh -2 -D 55555 "
 
 # Aliases for standard commands
 alias l='ls -alh'
