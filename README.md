@@ -11,18 +11,18 @@ This assumes you have installed all recent updates and XCode and/or "Command Lin
 
 ### Start at the beginning
 
-''''sh
+'''sh
 ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
 
 brew install git
 brew install wget
 brew install ack
 brew install par
-''''
+'''
 
 ### Time for some dotfiles
 
-''''sh
+''sh
 git config --global user.name "Your Name Here"
 git config --blobal user.email email@domain.com
 cd ~
@@ -32,13 +32,13 @@ ln -s ~/dotfiles/bash_profile ~/.bash_profile
 ln -s ~/dotfiles/bash_prompt ~/.bash_prompt
 ln -s ~/dotfiles/functions ~/.functions
 ln -s ~/dotfiles/vimrc ~/.vimrc
-''''
+''
 
 ### Casks are our friend
 
 [homebrew-cask](https://github.com/phinze/homebrew-cask) is so much easier
 
-''''sh
+'''sh
 # install homebrew-cask
 brew tap phinze/homebrew-cask
 brew install brew-cask
@@ -60,7 +60,7 @@ brew cask install marked2
 # talking is important
 brew cask install adium
 brew cask install skype
-''''
+'''
 
 ### Other applications
 Check out those App Store purchases...the history makes life easy.
@@ -87,6 +87,6 @@ Some to remember:
 
 So it doesn't have to be tracked in this repo, install the thesaurus manually and put it in /users/name/.vim/thesaurus/
 
-''''sh
+'''sh
 wget http://www.gutenberg.org/dirs/etext02/mthes10.zip
-''''
+'''
