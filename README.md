@@ -13,8 +13,7 @@ Dear Tyler, install [pathogen](https://github.com/tpope/vim-pathogen).
 
 Also, don't forget:
 
-[Vim Markdown](https://github.com/plasticboy/vim-markdown)
-
-and
-
-[Solarized Colors](https://github.com/altercation/vim-colors-solarized)
+* [Vim Markdown](https://github.com/plasticboy/vim-markdown)
+* [Solarized Colors](https://github.com/altercation/vim-colors-solarized)
+* [NERD Tree](https://github.com/scrooloose/nerdtree)
+* [writer.vim](https://github.com/dsanson/writer.vim)

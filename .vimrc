@@ -15,8 +15,10 @@ set nocompatible
 
 if has( 'gui_running' )
   set transparency=0
+  set background=dark
   colorscheme solarized
 else
+  set background=dark
   colorscheme solarized
 endif
 
@@ -41,8 +43,6 @@ syntax on
 
 " Change leader to a comma because the backslash is too far away
 " That means all \x commands turn into ,x
-" The mapleader has to be set before vundle starts loading all 
-" the plugins.
 let mapleader=","
 
 let g:vim_markdown_folding_disabled=1
@@ -111,6 +111,19 @@ set wildignore+=*.png,*.jpg,*.gif
 set scrolloff=8         "Start scrolling when we're 8 lines away from margins
 set sidescrolloff=15
 set sidescroll=1
+
+" ================ Word Processor Mode ==============
+func! WordProcessorMode()
+    setlocal formatoptions=t1
+    setlocal textwidth=80
+    map j gj
+    map k gk
+    setlocal smartindent
+    setlocal spell spelllang=en_us
+    setlocal noexpandtab
+endfu
+com! WP call WordProcessorMode()
+
 
 
 set clipboard=unnamed
