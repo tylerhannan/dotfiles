@@ -1,0 +1,56 @@
+# @gf3’s Sexy Bash Prompt, inspired by “Extravagant Zsh Prompt”
+# Shamelessly began at from https://github.com/gf3/dotfiles
+# and then modified for my preferences
+
+if [[ $COLORTERM = gnome-* && $TERM = xterm ]] && infocmp gnome-256color >/dev/null 2>&1; then
+	export TERM=gnome-256color
+elif infocmp xterm-256color >/dev/null 2>&1; then
+	export TERM=xterm-256color
+fi
+
+if tput setaf 1 &> /dev/null; then
+	tput sgr0
+	if [[ $(tput colors) -ge 256 ]] 2>/dev/null; then
+		GREEN=$(tput setaf 190)
+		RED=$(tput setaf 1)
+		WHITE=$(tput setaf 7)
+	else
+		GREEN=$(tput setaf 2)
+		RED=$(tput setaf 1)
+		WHITE=$(tput setaf 7)
+	fi
+	BOLD=$(tput bold)
+	RESET=$(tput sgr0)
+else
+	GREEN="\033[1;32m"
+	RED="\033[1;31m"
+	WHITE="\033[1;37m"
+	BOLD=""
+	RESET="\033[m"
+fi
+
+export GREEN
+export RED
+export WHITE
+export BOLD
+export RESET
+
+function parse_git_dirty() {
+	[[ $(git status 2> /dev/null | tail -n1) != *"working directory clean"* ]] && echo "*"
+}
+
+function parse_git_color
+{
+  if [ "$(parse_git_dirty)" == "*" ] ; then
+    echo "$RED"
+  else
+    echo "$GREEN"
+  fi
+}
+
+function parse_git_branch() {
+	git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
+}
+
+export PS1="\[$WHITE\]\u \[$RESET\]at \[$WHITE\]\h \[$RESET\]in \[$GREEN\]\w\[$RESET\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on\") \$(parse_git_color)\]\$(parse_git_branch) \[$RESET\]\n\$ "
+export PS2="→ \[$RESET\]"
