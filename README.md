@@ -84,9 +84,7 @@ Some to remember:
 
 These are simple things that either embedding as submodules or tracking in repository are a silly idea
 
-1) Install [pathogen](https://github.com/tpope/vim-pathogen)
-
-2) Install the Vim thesaurus
+Install the Vim thesaurus
 
 ```sh
 cd ~/.vim
