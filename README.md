@@ -27,11 +27,8 @@ git config --global user.name "Your Name Here"
 git config --blobal user.email email@domain.com
 cd ~
 git clone https://github.com/tylerhannan/dotfiles.git
-ln -s ~/dotfiles/alias ~/.aliases
-ln -s ~/dotfiles/bash_profile ~/.bash_profile
-ln -s ~/dotfiles/bash_prompt ~/.bash_prompt
-ln -s ~/dotfiles/functions ~/.functions
-ln -s ~/dotfiles/vimrc ~/.vimrc
+cd dotfiles
+source bootstrap.sh
 ```
 
 ### Casks are our friend
