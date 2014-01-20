@@ -85,8 +85,15 @@ Some to remember:
 
 ### Last Bits of Joy
 
-So it doesn't have to be tracked in this repo, install the thesaurus manually and put it in /users/name/.vim/thesaurus/
+These are simple things that either embedding as submodules or tracking in repository are a silly idea
+
+1) Install [pathogen](https://github.com/tpope/vim-pathogen)
+
+2) Install the Vim thesaurus
 
 ```sh
+cd ~/.vim
+mkd thesaurus
 wget http://www.gutenberg.org/dirs/etext02/mthes10.zip
+xt mthes10.zip
 ```
