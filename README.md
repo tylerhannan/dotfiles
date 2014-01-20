@@ -9,7 +9,7 @@ To that end, this repo is simple personal configurations.  Attribution, where re
 Vim plugins
 -----------
 
-Dear Tyler, install pathogen.
+Dear Tyler, install [pathogen](https://github.com/tpope/vim-pathogen).
 
 Also, don't forget:
 
