@@ -1,0 +1,41 @@
+# I hate remembering extraction command line options
+# from https://github.com/tristen/dotfiles/blob/master/bash_profile
+function xt() {
+  # xt = eXTract, a wrapper to extract many different archive formats
+  if [ -f $1 ] ; then
+    case $1 in
+      *.tar.bz2)   tar xvjf $1     ;;
+      *.tar.gz)    tar xvzf $1     ;;
+      *.bz2)       bunzip2 $1      ;;
+      *.rar)       unrar x $1      ;;
+      *.gz)        gunzip $1       ;;
+      *.tar)       tar xvf $1      ;;
+      *.tbz2)      tar xvjf $1     ;;
+      *.tgz)       tar xvzf $1     ;;
+      *.zip)       unzip $1        ;;
+      *.Z)         uncompress $1   ;;
+      *.7z)        7z x $1         ;;
+      *)           echo "'$1' cannot be extracted via >extract<" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
+
+# Create a new directory and enter it
+function mkd() {
+  mkdir -p "$1" && cd "$1"
+}
+
+# Use Git’s colored diff when available
+hash git &>/dev/null
+if [ $? -eq 0 ]; then
+  function diff() {
+    git diff --no-index --color-words "$@"
+  }
+fi
+
+# Append to my todo file by simply typing
+function t() {
+  echo "$1" >> ~/Dropbox/Notes/todo.txt
+}
