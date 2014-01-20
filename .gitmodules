@@ -7,3 +7,6 @@
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree
+[submodule "bundle/writer"]
+	path = bundle/writer
+	url = https://github.com/dsanson/writer.vim
