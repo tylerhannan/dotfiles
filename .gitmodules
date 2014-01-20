@@ -10,3 +10,6 @@
 [submodule "bundle/writer"]
 	path = bundle/writer
 	url = https://github.com/dsanson/writer.vim
+[submodule "bundle/ack"]
+	path = bundle/ack
+	url = https://github.com/mileszs/ack.vim
