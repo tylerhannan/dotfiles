@@ -114,6 +114,7 @@ set sidescrolloff=15
 set sidescroll=1
 
 " ================ Word Processor Mode ==============
+" Pleasently acquired from http://www.drbunsen.org/writing-in-vim/
 func! WordProcessorMode()
     setlocal formatoptions=t1
     setlocal noexpandtab
@@ -130,6 +131,9 @@ func! WordProcessorMode()
 endfu
 com! WP call WordProcessorMode()
 
+" =============== Preview in Marked App =============
+
+:nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
 
 
 set clipboard=unnamed
