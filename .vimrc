@@ -121,6 +121,7 @@ func! WordProcessorMode()
     map k gk
     setlocal smartindent
     setlocal spell spelllang=en_us
+    set thesaurus+=/Users/tylerhannan/.vim/thesaurus/mthesaur.txt
     set complete+=s
     set formatprg=par
     setlocal wrap
