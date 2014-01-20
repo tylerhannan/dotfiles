@@ -18,7 +18,7 @@ Also, don't forget:
 * [NERD Tree](https://github.com/scrooloose/nerdtree)
 * [writer.vim](https://github.com/dsanson/writer.vim)
 
-also, don't forget to install par, and add the thesaurus for word processing mode
+also, don't forget to install par, and add the thesaurus for [word processing mode](http://www.drbunsen.org/writing-in-vim/#fn:3)
 
 Thesaurus Location
 ------------------
