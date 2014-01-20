@@ -115,12 +115,16 @@ set sidescroll=1
 " ================ Word Processor Mode ==============
 func! WordProcessorMode()
     setlocal formatoptions=t1
+    setlocal noexpandtab
     setlocal textwidth=80
     map j gj
     map k gk
     setlocal smartindent
     setlocal spell spelllang=en_us
-    setlocal noexpandtab
+    set complete+=s
+    set formatprg=par
+    setlocal wrap
+    setlocal linebreak
 endfu
 com! WP call WordProcessorMode()
 

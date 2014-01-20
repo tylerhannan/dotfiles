@@ -17,3 +17,14 @@ Also, don't forget:
 * [Solarized Colors](https://github.com/altercation/vim-colors-solarized)
 * [NERD Tree](https://github.com/scrooloose/nerdtree)
 * [writer.vim](https://github.com/dsanson/writer.vim)
+
+also, don't forget to install par, and add the thesaurus for word processing mode
+
+Thesaurus Location
+------------------
+
+Throw it in /users/name/.vim/thesaurus/
+
+and 'wget' from
+
+http://www.gutenberg.org/dirs/etext02/mthes10.zip
