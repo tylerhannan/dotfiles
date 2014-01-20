@@ -7,12 +7,19 @@ alias kthxbai='exit'
 alias HideDesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
 alias ShowDesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
 
+# Turn on/off notification center
+alias SoAnnoying="launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist"
+alias BugMeAgain="launchctl load -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist"
+
 # Aliases for launching applications
 alias vlc='open -a VLC'
-alias seedbox='ssh -2 user@server'
 alias mdown='open -a Byword'
 alias mpreview='open -a Marked'
 alias notes="open -a nvALT"
+
+# Aliases for things that require them
+alias seedbox='ssh -2 viqbang@dionysus.feralhosting.com'
+alias tunnel="screen ssh -2 -D 55555 viqbang@dionysus.feralhosting.com"
 
 # Aliases for standard commands
 alias l='ls -alh'
