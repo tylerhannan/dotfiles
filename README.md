@@ -18,20 +18,27 @@ Start by installing XCode and ["Command Line Tools"](http://railsapps.github.io/
 
 ### Start at the beginning
 
+There is probably a better logical order than this, but it is what came out of my fingers.
+
 ```sh
 ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
 
+brew doctor
+brew update
 brew install git
 brew install wget
 brew install ack
 brew install par
+
+\curl -L https://get.rvm.io | bash -s stable
+
 ```
 
 ### Time for some dotfiles
 
 ```sh
 git config --global user.name "Your Name Here"
-git config --blobal user.email email@domain.com
+git config --global user.email email@domain.com
 git clone https://github.com/tylerhannan/dotfiles.git
 cd dotfiles
 source bootstrap.sh
