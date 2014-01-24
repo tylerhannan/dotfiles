@@ -66,6 +66,8 @@ brew cask install firefox
 brew cask install google-chrome
 brew cask install alfred
 brew cask install marked2
+brew cask install flux
+brew cask install lastpass-universal
 
 # talking is important
 brew cask install adium
