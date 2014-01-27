@@ -18,3 +18,4 @@ eval "$(hub alias -s)"
 
 # RVM joy, yo.
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+export PATH=/usr/local/bin:$PATH
