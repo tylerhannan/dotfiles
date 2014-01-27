@@ -21,7 +21,7 @@ Start by installing XCode and ["Command Line Tools"](http://railsapps.github.io/
 There is probably a better logical order than this, but it is what came out of my fingers.
 
 ```sh
-ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
+ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go)"
 
 brew doctor
 brew update
