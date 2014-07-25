@@ -1,0 +1,21 @@
+# Installing  native apps
+
+install caskroom/cask/brew-cask
+tap caskroom /versions
+
+# Essetials are just that
+cask install iterm2 2> /dev/null
+cask install nv-alt 2> /dev/null
+cask install macvim 2> /dev/null
+cask install dropbox 2> /dev/null
+cask install virtualbox 2> /dev/null
+cask install vagrant 2> /dev/null
+cask install vlc 2> /dev/null
+cask install alfred 2> /dev/null
+cask install flux 2> /dev/null
+cask install google-chrome 2> /dev/null
+cask install lastpass-universal 2> /dev/null
+
+# Talking is important
+cask install adium 2> /dev/null
+cask install skype 2> /dev/null

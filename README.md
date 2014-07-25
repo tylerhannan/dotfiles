@@ -21,14 +21,7 @@ There is probably a better logical order than this, but it is what came out of m
 ```sh
 ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go)"
 
-brew doctor
-brew update
-brew install git
-brew install wget
-brew install ack
-brew install par
-
-\curl -L https://get.rvm.io | bash -s stable
+brew bundle ~/Brewfile
 
 ```
 
@@ -44,32 +37,8 @@ source bootstrap.sh
 
 ### Casks are our friend
 
-[homebrew-cask](https://github.com/phinze/homebrew-cask) is so much easier
-
 ```sh
-# install homebrew-cask
-brew tap phinze/homebrew-cask
-brew install brew-cask
-
-# essentials are just that
-brew cask install iterm2
-brew cask install nv-alt
-brew cask install macvim
-brew cask install dropbox
-brew cask install virtualbox
-brew cask install vagrant
-brew cask install divvy
-brew cask install vlc
-brew cask install firefox
-brew cask install google-chrome
-brew cask install alfred
-brew cask install marked2
-brew cask install flux
-brew cask install lastpass-universal
-
-# talking is important
-brew cask install adium
-brew cask install skype
+brew bundle ~/Caskfile
 ```
 
 ### Other applications
