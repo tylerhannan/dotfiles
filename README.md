@@ -7,9 +7,7 @@ It is extraordinarily tempting to script much of the below...but, frankly, there
 This includes the following Vim plugins (ask me some time why they are no longer submodules)
 * [NERD Tree](https://github.com/scrooloose/nerdtree)
 * [vim-colors-solarized](https://github.com/altercation/vim-colors-solarized)
-* [vim-easymotion](https://github.com/Lokaltog/vim-easymotion)
 * [vim-markdown](https://github.com/plasticboy/vim-markdown)
-* [writer.vim](https://github.com/dsanson/writer.vim)
 
 Setup
 -----
