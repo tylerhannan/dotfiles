@@ -121,7 +121,6 @@ set sidescroll=1
 func! WordProcessorMode()
     setlocal formatoptions=t1
     setlocal noexpandtab
-    setlocal textwidth=80
     map j gj
     map k gk
     setlocal smartindent
