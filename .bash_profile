@@ -20,6 +20,3 @@ eval "$(hub alias -s)"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 export PATH=/usr/local/bin:$PATH
 
-# Set Open Files Limit to something intelligent
-ulimit -n 65536
-ulimit -u 2048

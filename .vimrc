@@ -49,8 +49,6 @@ syntax on
 " That means all \x commands turn into ,x
 let mapleader=","
 
-let g:vim_markdown_folding_disabled=1
-
 " ================ Search Settings  =================
 
 set incsearch        "Find the next match as we type the search
@@ -115,23 +113,6 @@ set wildignore+=*.png,*.jpg,*.gif
 set scrolloff=8         "Start scrolling when we're 8 lines away from margins
 set sidescrolloff=15
 set sidescroll=1
-
-" ================ Word Processor Mode ==============
-" Pleasently acquired from http://www.drbunsen.org/writing-in-vim/
-func! WordProcessorMode()
-    setlocal formatoptions=t1
-    setlocal noexpandtab
-    map j gj
-    map k gk
-    setlocal smartindent
-    setlocal spell spelllang=en_us
-    set thesaurus+=/Users/tylerhannan/.vim/thesaurus/mthesaur.txt
-    set complete+=s
-    set formatprg=par
-    setlocal wrap
-    setlocal linebreak
-endfu
-com! WP call WordProcessorMode()
 
 " =============== Preview in Marked App =============
 
