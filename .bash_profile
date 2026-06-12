@@ -14,21 +14,26 @@ export HISTCONTROL=erasedups
 export HISTSIZE=10000
 shopt -s histappend
 
-# RVM joy, yo.
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 export PATH=/usr/local/bin:$PATH
 
 # Regionalisation Sucks
 export LANG=en_US.UTF-8
-eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Homebrew (works on both Apple Silicon and Intel; safe on a fresh machine)
+if [ -x /opt/homebrew/bin/brew ]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+elif [ -x /usr/local/bin/brew ]; then
+  eval "$(/usr/local/bin/brew shellenv)"
+fi
+
 # Add Visual Studio Code (code)
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 # Created by `pipx` on 2024-08-13 18:11:50
-export PATH="$PATH:/Users/numbersix/.local/bin"
+export PATH="$PATH:$HOME/.local/bin"
 
-eval "$(thefuck --alias)"
-. "$HOME/.cargo/env"
+command -v thefuck >/dev/null 2>&1 && eval "$(thefuck --alias)"
+[ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 
 # Added by OrbStack: command-line tools and integration
 # This won't be added again if you remove it.
