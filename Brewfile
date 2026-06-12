@@ -158,7 +158,6 @@ cask "insta360-link-controller"
 
 # Misc / research / firmware
 cask "mendeley"
-cask "qmk-toolbox"
 
 # --- Mac App Store apps (sign into the App Store first) ----------------------
 mas "Byword", id: 420212497
