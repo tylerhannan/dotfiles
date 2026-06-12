@@ -1,0 +1,20 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+# Vim
+*.swp
+*.swo
+*~
+.netrwhist
+.vim/backups/
+.vim/thesaurus/
+
+# Editor / misc cruft
+*.bak
+*.tmp
+.idea/
+.vscode/
