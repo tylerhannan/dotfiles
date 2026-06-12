@@ -1,6 +1,6 @@
 ##
-export PATH=/opt/local/bin:/opt/local/sbin:~/bin:$PATH
-export BASH_SILENCE_DEPRECATION_WARNING=1 
+export PATH="$HOME/bin:$PATH"
+export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # Load the shell dotfiles, and then some:
 # * ~/.extra can be used for other settings you don’t want to commit.
@@ -10,7 +10,7 @@ done
 unset file
 
 # My brain is the small and memberizing things is the hard
-export HISTCONTROL=erasedups 
+export HISTCONTROL=erasedups
 export HISTSIZE=10000
 shopt -s histappend
 

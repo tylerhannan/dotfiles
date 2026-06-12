@@ -163,3 +163,10 @@ git config core.hooksPath hooks
 It lints the shell scripts and bash config files before each commit (and is
 skipped automatically if `shellcheck` isn't installed). Bypass a single commit
 with `git commit --no-verify`.
+
+### Keeping the repo in sync
+
+Run `./sync.sh` periodically to catch drift. It reports apps installed on the
+machine that are missing from the `Brewfile` (and vice-versa) without
+clobbering the curated grouping, and refreshes the exported app defaults and
+Karabiner config. Review with `git diff` and commit what you want.

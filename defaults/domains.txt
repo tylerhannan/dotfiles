@@ -10,4 +10,3 @@ com.knollsoft.Hyperkey
 com.jordanbaird.Ice
 com.fabriceleyne.theclock
 jp.plentycom.app.SteerMouse
-jp.plentycom.boa.SteerMouse

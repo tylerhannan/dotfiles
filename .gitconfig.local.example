@@ -1,0 +1,20 @@
+# Machine-local git identity and secrets. NOT tracked by git.
+#
+# Copy this to ~/.gitconfig.local and fill in your details. The tracked
+# ~/.gitconfig pulls it in via [include]. install.sh can create it for you.
+#
+#   cp .gitconfig.local.example ~/.gitconfig.local
+
+[user]
+	name = Your Name
+	email = you@example.com
+
+# Optional: commit signing
+# [user]
+#	signingkey = YOUR_KEY_ID
+# [commit]
+#	gpgsign = true
+
+# Optional: credential helper (macOS keychain)
+# [credential]
+#	helper = osxkeychain

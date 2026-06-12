@@ -19,6 +19,7 @@ fi
 scripts=(
   bootstrap.sh
   install.sh
+  sync.sh
   defaults/export.sh
   defaults/import.sh
   karabiner/restore.sh

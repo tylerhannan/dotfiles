@@ -42,6 +42,20 @@ git -C "$DIR" submodule update --init --recursive
 step "Symlink dotfiles into \$HOME"
 "$DIR/bootstrap.sh" --force
 
+step "Git identity (~/.gitconfig.local)"
+if [ -f "$HOME/.gitconfig.local" ]; then
+  echo "present."
+elif [ -t 0 ]; then
+  read -r -p "  git user.name:  " git_name
+  read -r -p "  git user.email: " git_email
+  git config --file "$HOME/.gitconfig.local" user.name "$git_name"
+  git config --file "$HOME/.gitconfig.local" user.email "$git_email"
+  echo "wrote ~/.gitconfig.local"
+else
+  cp "$DIR/.gitconfig.local.example" "$HOME/.gitconfig.local"
+  echo "created ~/.gitconfig.local from the template — edit it with your name/email."
+fi
+
 step "Install Homebrew bundle (formulae, casks, extensions)"
 echo "Tip: sign into the App Store first so the 'mas' apps install too."
 # Non-fatal: a missing App Store sign-in makes mas entries fail, but the
