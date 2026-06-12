@@ -21,6 +21,13 @@ cd dotfiles
 runs `brew bundle install` (formulae, casks, and editor extensions), and
 restores the app configs under `defaults/`, `karabiner/`, and `ghostty/`.
 
+> **Then switch to bash before running anything else (see §3).** The dotfiles
+> put Homebrew and its CLI tools (`gh`, `jq`, …) on your PATH *only in bash*, but
+> a fresh macOS account runs zsh — so in the original terminal those tools show
+> as `command not found`. After `install.sh`, run `chsh -s /bin/bash` and start a
+> fresh login shell (`exec bash -l`, or just open a new terminal tab) before the
+> later steps that use them (App Store re-bundle, `gh auth login`).
+
 ## 2. Git identity
 
 `install.sh` prompts for your name/email and writes them to `~/.gitconfig.local`,
@@ -39,12 +46,18 @@ git config --file ~/.gitconfig.local user.email "you@example.com"
 
 ## 3. Login shell
 
-A fresh macOS defaults to `zsh`, so these bash dotfiles won't load until you
-switch:
+A fresh macOS defaults to `zsh`, so these bash dotfiles — and the Homebrew PATH
+they set up — won't load until you switch. Do this early, right after
+`install.sh`, because the later steps rely on Homebrew CLI tools:
 
 ```sh
-chsh -s /bin/bash
+chsh -s /bin/bash    # changes the login shell for future sessions
+exec bash -l         # start a bash login shell now, in this terminal
 ```
+
+`chsh` alone only affects *new* terminals; `exec bash -l` (or opening a new tab)
+loads `~/.bash_profile` in the current one so `brew`, `gh`, etc. are immediately
+on PATH. Verify with `gh --version`.
 
 (Optionally `brew install bash` first for a modern bash, then `chsh -s` to it
 after adding it to `/etc/shells`.)

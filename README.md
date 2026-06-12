@@ -28,7 +28,9 @@ cd dotfiles
 ./install.sh
 ```
 
-Then finish the handful of things that can't be scripted (git identity, login shell, App Store apps, SSH keys, settings sync) using the checklist in **[MIGRATION.md](MIGRATION.md)** — that's the authoritative new-machine runbook.
+**Switch to bash before running anything else:** the dotfiles put Homebrew and its CLI tools (`gh`, `jq`, …) on your PATH only in bash, but a fresh macOS account runs zsh, so those tools read as `command not found` until you switch. Run `chsh -s /bin/bash` then `exec bash -l` (or open a new terminal tab).
+
+Then finish the handful of things that can't be scripted (git identity, App Store apps, settings sync) using the checklist in **[MIGRATION.md](MIGRATION.md)** — that's the authoritative new-machine runbook.
 
 The rest of this section documents those same steps manually, for when you'd rather step through them one install at a time.
 
