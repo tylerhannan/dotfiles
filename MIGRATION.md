@@ -80,11 +80,14 @@ Re-add keys to the agent / GitHub as needed.
 - **Keyboard Maestro:** Preferences → General → "Macro Sync…" → open the synced
   file in `~/Dropbox`.
 
-## 7. Org / MDM-managed apps
+## 7. Apps installed by hand
 
-Installed and managed by work tooling, not this repo: **Adobe Creative Cloud**
-(Photoshop, Lightroom, InDesign), **Okta Verify**, **Falcon**, **Kandji Self
-Service**. Get these from your MDM / Creative Cloud / IT portal.
+- **Adobe Creative Cloud** (Photoshop, Lightroom, InDesign) — personal, not
+  work-managed. Install the Creative Cloud desktop app from adobe.com (or
+  `brew install --cask adobe-creative-cloud`), then install the individual
+  apps from it.
+- **Okta Verify**, **Falcon**, **Iru** (formerly Kandji Self Service) — provided
+  and managed by work tooling, not this repo. Get them from your MDM / IT portal.
 
 ## 8. macOS system defaults (optional)
 
