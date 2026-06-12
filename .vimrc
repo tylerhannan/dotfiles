@@ -39,7 +39,7 @@ set visualbell                  "No sounds
 set autoread                    "Reload files changed outside vim
 set tw=72
 set colorcolumn=73
-highlight ColorColumn ctermbg=10
+highlight ColorColumn ctermbg=10 guibg=#073642
 
 " This makes vim act like all other editors, buffers can
 " exist in the background without being in a window.
