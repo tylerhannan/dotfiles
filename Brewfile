@@ -110,7 +110,6 @@ cask "orbstack"
 # Productivity & notes
 cask "obsidian"
 cask "notion"
-cask "clickup"
 cask "claude"
 
 # Window & input management
