@@ -19,7 +19,7 @@ cd dotfiles
 
 `install.sh` installs the Command Line Tools + Homebrew, symlinks the dotfiles,
 runs `brew bundle install` (formulae, casks, and editor extensions), and
-restores the app configs under `defaults/` and `karabiner/`.
+restores the app configs under `defaults/`, `karabiner/`, and `ghostty/`.
 
 ## 2. Git identity
 
@@ -78,7 +78,17 @@ gpg --import secret.asc                          # new machine
 
 Re-add keys to the agent / GitHub as needed (`ssh-add`, upload the public key).
 
-## 6. App settings that sync themselves
+## 6. App settings
+
+Restored automatically by `install.sh` (committed in this repo):
+
+- **Ghostty:** terminal config (`ghostty/`). The configured font,
+  **BerkeleyMono Nerd Font**, is paid and is *not* installed by this repo —
+  install it separately or Ghostty falls back to a default.
+- **Karabiner-Elements**, **Rectangle**, **Hyperkey**, **Ice**, **The Clock**,
+  **SteerMouse** — see `karabiner/` and `defaults/`.
+
+Sync themselves once you sign in / point them at the sync folder:
 
 - **Cursor / VS Code:** enable Settings Sync (signed-in) — extensions are
   already installed via the Brewfile.

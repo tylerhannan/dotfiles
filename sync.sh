@@ -46,5 +46,11 @@ if [ -f "$HOME/.config/karabiner/karabiner.json" ]; then
   cp "$HOME/.config/karabiner/karabiner.json" "$DIR/karabiner/karabiner.json"
 fi
 
+GHOSTTY_CONF="$HOME/Library/Application Support/com.mitchellh.ghostty/config"
+if [ -f "$GHOSTTY_CONF" ]; then
+  echo "==> Refreshing Ghostty config"
+  cp "$GHOSTTY_CONF" "$DIR/ghostty/config"
+fi
+
 echo
 echo "Done. Review with 'git diff' and update the Brewfile by hand for any drift listed above."

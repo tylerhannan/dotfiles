@@ -24,6 +24,7 @@ scripts=(
   defaults/export.sh
   defaults/import.sh
   karabiner/restore.sh
+  ghostty/restore.sh
 )
 
 # Bash config files: no shebang, so declare the dialect.
