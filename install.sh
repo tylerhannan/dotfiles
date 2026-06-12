@@ -82,10 +82,5 @@ else
 fi
 
 step "Done"
-cat <<'EOF'
-Base setup complete. Finish the manual steps in MIGRATION.md:
-  - Sign into the App Store and install App Store-only apps (`mas`)
-  - Restore SSH/GPG keys
-  - Switch the login shell to bash if desired: chsh -s /bin/bash
-  - Enable Cursor / VS Code Settings Sync; point Alfred & Keyboard Maestro at their sync folders
-EOF
+echo "Base setup complete. Finish the manual steps in MIGRATION.md (App Store"
+echo "sign-in, credentials, login shell, app sync)."

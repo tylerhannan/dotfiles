@@ -62,38 +62,44 @@ brew bundle install --file=~/Brewfile
 
 New App Store apps get captured the next time you run `./sync.sh` (see §9).
 
-## 5. SSH / GPG keys
+## 5. Credentials (GitHub, SSH, GPG)
 
-Keys are **never** committed. Copy them from the old machine (or a backup):
+Keys and tokens are **never** committed. The common case is simple:
 
-```sh
-# SSH — from the old machine
-rsync -av ~/.ssh/ newmachine:~/.ssh/
-chmod 700 ~/.ssh && chmod 600 ~/.ssh/*
-
-# GPG (if you sign commits) — on the old machine, then import on the new one
-gpg --export-secret-keys --armor > secret.asc   # old machine; delete after import
-gpg --import secret.asc                          # new machine
-```
-
-Re-add keys to the agent / GitHub as needed (`ssh-add`, upload the public key).
-
-**GitHub auth is HTTPS, not SSH.** Git talks to GitHub over HTTPS via the `gh`
+**GitHub — just re-authenticate.** Git talks to GitHub over HTTPS via the `gh`
 CLI (installed by the Brewfile), with the token cached in the macOS keychain
 (`credential.helper = osxkeychain`). The token lives in the keychain, not in a
-file, so there is nothing to copy from the old machine — just re-authenticate:
+file, so there is nothing to copy from the old machine:
 
 ```sh
 gh auth login   # browser/device flow; re-creates the token in the keychain
 ```
 
-After that, `git` over HTTPS works with no SSH key involved. (The only SSH key
-here is for the prod bastion host; see the `~/.ssh/config` host entry.)
+After that, `git` over HTTPS works with no SSH key involved.
 
-**No old machine handy?** Keep the private keys in Bitwarden (secure-note text or
-a file attachment), then paste/download them on the new machine and fix
-permissions as above. This repo deliberately stores no secrets and no encrypted
-blobs — credentials live in the password manager or come off the old machine.
+**SSH — only the prod bastion key.** The lone key here is for the prod bastion
+host (see the `~/.ssh/config` host entry); it's a corp credential, so keep it in
+Bitwarden (corp vault) as a secure note. On the new machine, paste it back and
+fix permissions:
+
+```sh
+mkdir -p ~/.ssh && chmod 700 ~/.ssh
+# paste the key into ~/.ssh/prod-bastion-host, then:
+chmod 600 ~/.ssh/prod-bastion-host
+```
+
+(Or `rsync -av ~/.ssh/ newmachine:~/.ssh/` straight off the old machine, then
+`chmod 700 ~/.ssh && chmod 600 ~/.ssh/*`.)
+
+**GPG (only if you sign commits).** Export on the old machine, import on the new:
+
+```sh
+gpg --export-secret-keys --armor > secret.asc   # old machine; delete after import
+gpg --import secret.asc                          # new machine
+```
+
+This repo deliberately stores no secrets and no encrypted blobs — credentials
+live in the password manager or come off the old machine.
 
 ## 6. App settings
 
