@@ -57,13 +57,24 @@ brew bundle dump --force --file=~/Brewfile
 
 > Note: the old separate `Caskfile` / `brew cask` workflow is gone — casks now live in the `Brewfile` as `cask "..."` entries.
 
+### Step 4: Restore app configs
+
+Some apps store their settings in the macOS `defaults` system, which can be exported to and imported from this repo. After the relevant app is installed, restore its config:
+
+```sh
+# Rectangle (window manager)
+./rectangle/restore.sh
+```
+
+To re-snapshot Rectangle's current settings back into the repo, run the `defaults export` line documented at the top of `rectangle/restore.sh`.
+
 ### Other applications
 Check out those App Store purchases...the history makes life easy.
 
 Some to remember:
 * **Editors/Dev:** Cursor, Visual Studio Code, Ghostty, OrbStack
 * **Notes/PKM:** Obsidian, Notion, Things3, Byword
-* **Window/Input:** Alfred 5, Rectangle, Divvy, Karabiner-Elements, Keyboard Maestro, Hyperkey, Ice
+* **Window/Input:** Alfred 5, Rectangle, Karabiner-Elements, Keyboard Maestro, Hyperkey, Ice
 * **Comms:** Slack, Discord, Telegram, WhatsApp, Zoom
 * **Media/Creative:** Adobe CC (Photoshop, Lightroom, InDesign), OBS, Descript, Plex, Infuse
 * **Storage/Sync:** Dropbox (also installed via the Brewfile; `~/Dropbox` backs the `t` todo helper)
