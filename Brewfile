@@ -131,7 +131,6 @@ cask "slack"
 cask "telegram"
 cask "whatsapp"
 cask "zoom"
-cask "gotomeeting"
 
 # Media
 cask "vlc"
