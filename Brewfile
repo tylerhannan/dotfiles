@@ -152,7 +152,6 @@ cask "yubico-authenticator"
 cask "dropbox"
 cask "appcleaner"
 cask "sonos"
-cask "garmin-express"
 
 # Peripherals (hardware companion apps)
 cask "insta360-link-controller"
