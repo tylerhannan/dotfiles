@@ -25,7 +25,7 @@ xcode-select --install
 
 ### Step 2: Clone the dotfiles and bootstrap
 
-`bootstrap.sh` rsyncs the dotfiles (including the `Brewfile`) into your home directory.
+`bootstrap.sh` symlinks the dotfiles (including the `Brewfile`) into your home directory, so edits in `$HOME` and this repo stay in sync. Any pre-existing files are moved to `~/.dotfiles-backup/<timestamp>/` first.
 
 ```sh
 git config --global user.name "Your Name Here"
