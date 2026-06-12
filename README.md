@@ -44,11 +44,16 @@ xcode-select --install
 `bootstrap.sh` symlinks the dotfiles (including the `Brewfile`) into your home directory, so edits in `$HOME` and this repo stay in sync. Any pre-existing files are moved to `~/.dotfiles-backup/<timestamp>/` first.
 
 ```sh
-git config --global user.name "Your Name Here"
-git config --global user.email email@domain.com
 git clone --recurse-submodules https://github.com/tylerhannan/dotfiles.git
 cd dotfiles
 source bootstrap.sh
+```
+
+Set your git identity in the untracked local file (the tracked `.gitconfig` includes it):
+
+```sh
+git config --file ~/.gitconfig.local user.name "Your Name Here"
+git config --file ~/.gitconfig.local user.email email@domain.com
 ```
 
 If you cloned without `--recurse-submodules` (so the Vim plugins under `.vim/bundle` are empty), pull them in with:

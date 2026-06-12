@@ -20,6 +20,7 @@ LINKS=(
   .bash_profile
   .bash_prompt
   .functions
+  .gitconfig
   .vimrc
   .vim
   Brewfile

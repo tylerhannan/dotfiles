@@ -1,0 +1,21 @@
+# Shared, non-sensitive git configuration (tracked in the dotfiles repo).
+#
+# Identity and anything sensitive (name, email, credential helpers, signing
+# keys) live in ~/.gitconfig.local, which is NOT tracked. The include below
+# pulls it in; git silently ignores the include if the file is absent.
+# See MIGRATION.md for how to create it on a new machine.
+
+[include]
+    path = ~/.gitconfig.local
+
+[push]
+    autoSetupRemote = true
+
+[pull]
+    rebase = false
+
+[color]
+    ui = auto
+
+[core]
+    editor = vim

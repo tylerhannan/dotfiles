@@ -18,11 +18,14 @@ restores the app configs under `defaults/` and `karabiner/`.
 
 ## 2. Git identity
 
-Not stored in this repo (kept out of version control on purpose):
+The repo's `.gitconfig` holds only shared, non-sensitive settings and includes
+`~/.gitconfig.local` for identity. Since `~/.gitconfig` is symlinked to the repo,
+write your identity to the **local** file (not `--global`, which would follow
+the symlink into the repo):
 
 ```sh
-git config --global user.name "Tyler Hannan"
-git config --global user.email "you@example.com"
+git config --file ~/.gitconfig.local user.name "Tyler Hannan"
+git config --file ~/.gitconfig.local user.email "you@example.com"
 ```
 
 ## 3. Login shell
