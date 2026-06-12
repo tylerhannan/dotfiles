@@ -119,7 +119,7 @@ Log out / restart afterward for everything to take effect.
 
 Run the helper periodically. It flags Homebrew/App Store drift (anything
 installed but not yet in the Brewfile) and refreshes the exported app settings
-and Karabiner config:
+plus the Karabiner and Ghostty configs:
 
 ```sh
 ./sync.sh

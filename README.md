@@ -1,6 +1,6 @@
 dotfiles
 ========
-I get rather tired of resetting my machine every time I change, and/or inadvertently destroy it.  To that end, this repo is simple personal configurations.  Attribution, where remembered, is given.
+I get rather tired of rebuilding my machine every time I change it or inadvertently destroy it. To that end, this repo holds a set of simple personal configurations. Attribution, where remembered, is given.
 
 `install.sh` automates the full setup in one command, but every step is also documented manually below so you can step through it one install at a time when you'd rather not run the whole thing blind.
 
@@ -30,7 +30,7 @@ cd dotfiles
 
 Then finish the handful of things that can't be scripted (git identity, login shell, App Store apps, SSH keys, settings sync) using the checklist in **[MIGRATION.md](MIGRATION.md)** — that's the authoritative new-machine runbook.
 
-The rest of this section documents the same automated steps manually, for when you'd rather step through them one install at a time (the **Manual steps** below mirror what `install.sh` does; `MIGRATION.md` adds the non-scriptable follow-ups).
+The rest of this section documents those same steps manually, for when you'd rather step through them one install at a time.
 
 ### Manual steps
 
@@ -71,7 +71,7 @@ git submodule update --init --recursive
 
 ### Step 3: Install everything from the Brewfile
 
-The `Brewfile` is a single manifest of Homebrew formulae, casks (GUI apps), taps, and VSCode/Cursor extensions. Run:
+The `Brewfile` is a single manifest of Homebrew formulae, casks (GUI apps), taps, and VS Code / Cursor extensions. Run:
 
 ```sh
 brew bundle install --file=~/Brewfile
@@ -103,6 +103,12 @@ Re-snapshot the current machine any time with `./defaults/export.sh`, then commi
 ./karabiner/restore.sh
 ```
 
+**Ghostty** keeps its config in `~/Library/Application Support/com.mitchellh.ghostty/config` (its font, BerkeleyMono Nerd Font, is paid and installed separately):
+
+```sh
+./ghostty/restore.sh
+```
+
 **Alfred** and **Keyboard Maestro** carry large, binary, and potentially secret-bearing data, so they are *not* committed here — use each app's own sync instead:
 
 - Alfred: Preferences → Advanced → "Set preferences folder…" pointed at Dropbox (`~/Dropbox`), then point the new machine at the same folder.
@@ -110,13 +116,13 @@ Re-snapshot the current machine any time with `./defaults/export.sh`, then commi
 
 ### Step 5: macOS system defaults (optional)
 
-`.macos` applies conservative, user-domain system preferences (fast key repeat, Finder path/status bar and file extensions, screenshots to `~/Screenshots`, expanded save/print panels, fewer .DS_Store files, etc.). Review it first, then run it manually:
+`.macos` sets user-domain system preferences. It mirrors this machine (Dark mode, a small auto-hiding Dock, tap-to-click, column-view Finder, analog menu-bar clock, …) plus a few broadly-useful extras (fast key repeat, screenshots to `~/Screenshots`, fewer .DS_Store files, expanded save/print panels). Review it first, then run it:
 
 ```sh
 ./.macos
 ```
 
-It is intentionally **not** run by `install.sh`. Some changes need a logout/restart to fully take effect.
+`install.sh` offers to run it as an optional, prompted step. Some changes need a logout/restart to fully take effect.
 
 ### Applications
 
@@ -140,7 +146,7 @@ Not covered by the Brewfile, by design:
 
 ### Install the Vim Thesaurus
 
-These are simple things that would be silly to embed as a submodule or track in a repository 
+A small extra that would be silly to embed as a submodule or track in this repo:
 
 ```sh
 cd ~/.vim
@@ -151,7 +157,9 @@ xt mthes10.zip
 
 ## Development
 
-A `shellcheck` pre-commit hook lives in `hooks/`. Enable it once per clone:
+A `shellcheck` pre-commit hook lives in `hooks/`. `bootstrap.sh` enables it
+automatically (`git config core.hooksPath hooks`), and CI runs the same checks
+on every push. To enable it by hand in a clone where you didn't run bootstrap:
 
 ```sh
 git config core.hooksPath hooks
@@ -163,7 +171,8 @@ with `git commit --no-verify`.
 
 ### Keeping the repo in sync
 
-Run `./sync.sh` periodically to catch drift. It reports apps installed on the
-machine that are missing from the `Brewfile` (and vice-versa) without
-clobbering the curated grouping, and refreshes the exported app defaults and
-Karabiner config. Review with `git diff` and commit what you want.
+Run `./sync.sh` periodically to catch drift. It reports Homebrew-managed
+packages and App Store apps that are installed but missing from the `Brewfile`
+(reporting rather than rewriting, so the curated grouping stays intact), and
+refreshes the exported app defaults plus the Karabiner and Ghostty configs.
+Review with `git diff` and commit what you want.
