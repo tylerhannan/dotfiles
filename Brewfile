@@ -93,20 +93,65 @@ brew "wget"
 # Feature-rich command-line audio/video downloader
 brew "yt-dlp"
 
-# Voice and text chat software
+# --- GUI applications --------------------------------------------------------
+# `brew bundle dump --force` will re-sort these and add description comments.
+# App Store-only apps (Things 3, Infuse, Byword, ...) and org/MDM-managed apps
+# (Adobe CC, Okta Verify, Falcon, Kandji) are intentionally not listed here.
+# See MIGRATION.md.
+
+# Editors & dev
+cask "cursor"
+cask "visual-studio-code"
+cask "ghostty"
+cask "orbstack"
+
+# Productivity & notes
+cask "obsidian"
+cask "notion"
+cask "clickup"
+cask "claude"
+
+# Window & input management
+cask "rectangle"
+cask "alfred"
+cask "keyboard-maestro"
+cask "karabiner-elements"
+cask "hyperkey"
+cask "jordanbaird-ice"
+cask "steermouse"
+
+# Browsers
+cask "google-chrome"
+cask "firefox"
+
+# Comms & meetings
 cask "discord"
-# Client for the Dropbox cloud storage service
-cask "dropbox"
-# Research management tool
-cask "mendeley"
-# Toolbox companion for QMK Firmware
-cask "qmk-toolbox"
-# Team communication and collaboration software
 cask "slack"
-# Messaging app with a focus on speed and security
 cask "telegram"
-# Multimedia player
+cask "whatsapp"
+cask "zoom"
+cask "gotomeeting"
+
+# Media
 cask "vlc"
+cask "descript"
+cask "plex"
+
+# Security & network
+cask "bitwarden"
+cask "tailscale"
+cask "nordvpn"
+cask "yubico-authenticator"
+
+# Storage, sync & utilities
+cask "dropbox"
+cask "appcleaner"
+cask "sonos"
+cask "garmin-express"
+
+# Misc / research / firmware
+cask "mendeley"
+cask "qmk-toolbox"
 
 vscode "anthropic.claude-code"
 vscode "ecmel.vscode-html-css"
