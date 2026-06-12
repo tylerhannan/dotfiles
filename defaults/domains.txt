@@ -1,0 +1,13 @@
+# macOS `defaults` domains captured for new-machine migration.
+#
+# Re-snapshot the current machine:   ./export.sh
+# Restore onto a new machine:        ./import.sh   (after the apps are installed)
+#
+# One bundle identifier per line. Blank lines and #comments are ignored.
+
+com.knollsoft.Rectangle
+com.knollsoft.Hyperkey
+com.jordanbaird.Ice
+com.fabriceleyne.theclock
+jp.plentycom.app.SteerMouse
+jp.plentycom.boa.SteerMouse

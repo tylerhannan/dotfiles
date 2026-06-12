@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NSStatusItem Preferred Position Item-0</key>
+	<real>614.0</real>
+	<key>capsLockRemapped</key>
+	<integer>2</integer>
+	<key>hideMenuBarIcon</key>
+	<false/>
+	<key>hyperFlags</key>
+	<integer>1966080</integer>
+	<key>keyRemap</key>
+	<integer>1</integer>
+	<key>lastVersion</key>
+	<string>56</string>
+	<key>launchOnLogin</key>
+	<true/>
+	<key>quickHyperKeycode</key>
+	<integer>53</integer>
+</dict>
+</plist>

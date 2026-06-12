@@ -38,7 +38,7 @@
 	<key>footprintAnimationDurationMultiplier</key>
 	<real>0.0</real>
 	<key>gapSize</key>
-	<real>5</real>
+	<real>5.0</real>
 	<key>hideMenubarIcon</key>
 	<true/>
 	<key>landscapeSnapAreas</key>

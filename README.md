@@ -59,14 +59,26 @@ brew bundle dump --force --file=~/Brewfile
 
 ### Step 4: Restore app configs
 
-Some apps store their settings in the macOS `defaults` system, which can be exported to and imported from this repo. After the relevant app is installed, restore its config:
+After the apps are installed (Step 3), restore their settings from this repo.
+
+**`defaults`-based apps** (Rectangle, Hyperkey, Ice, The Clock, SteerMouse) are captured as plists under `defaults/`. Restore them all at once:
 
 ```sh
-# Rectangle (window manager)
-./rectangle/restore.sh
+./defaults/import.sh
 ```
 
-To re-snapshot Rectangle's current settings back into the repo, run the `defaults export` line documented at the top of `rectangle/restore.sh`.
+Re-snapshot the current machine any time with `./defaults/export.sh`, then commit the changed plists. The list of domains lives in `defaults/domains.txt`.
+
+**Karabiner-Elements** keeps its config in `~/.config/karabiner/karabiner.json`:
+
+```sh
+./karabiner/restore.sh
+```
+
+**Alfred** and **Keyboard Maestro** carry large, binary, and potentially secret-bearing data, so they are *not* committed here — use each app's own sync instead:
+
+- Alfred: Preferences → Advanced → "Set preferences folder…" pointed at Dropbox (`~/Dropbox`), then point the new machine at the same folder.
+- Keyboard Maestro: Preferences → General → "Macro Sync…" to a file in `~/Dropbox`, then "Open existing" on the new machine.
 
 ### Other applications
 Check out those App Store purchases...the history makes life easy.
