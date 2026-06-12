@@ -23,15 +23,19 @@ restores the app configs under `defaults/` and `karabiner/`.
 
 ## 2. Git identity
 
-The repo's `.gitconfig` holds only shared, non-sensitive settings and includes
-`~/.gitconfig.local` for identity. Since `~/.gitconfig` is symlinked to the repo,
-write your identity to the **local** file (not `--global`, which would follow
-the symlink into the repo):
+`install.sh` prompts for your name/email and writes them to `~/.gitconfig.local`,
+so on a fresh machine this is usually already done. The repo's `.gitconfig` holds
+only shared, non-sensitive settings and includes `~/.gitconfig.local` for identity.
+
+To set or change it by hand, write to the **local** file (not `--global`, which
+would follow the `~/.gitconfig` symlink into the repo):
 
 ```sh
 git config --file ~/.gitconfig.local user.name "Tyler Hannan"
 git config --file ~/.gitconfig.local user.email "you@example.com"
 ```
+
+(A `.gitconfig.local.example` template is included if you'd rather copy it.)
 
 ## 3. Login shell
 
@@ -47,29 +51,32 @@ after adding it to `/etc/shells`.)
 
 ## 4. App Store apps (`mas`)
 
-The Brewfile installs `mas`, but App Store apps must be added after signing in:
+Your App Store apps are already listed as `mas` entries in the Brewfile, so they
+install automatically — but only once you're signed in. `mas` can't sign you in.
 
 ```sh
-# Sign into the App Store app first, then:
-mas list                      # see what's installed (on the OLD machine)
-mas install <id>              # install on the new machine
+# 1. Open the App Store app and sign in.
+# 2. Then re-run the bundle (install.sh already did this once):
+brew bundle install --file=~/Brewfile
 ```
 
-App Store-only apps to reinstall: **Things 3, Infuse, Byword** (and Apple's
-Keynote/Numbers/Pages if needed). After installing them you can capture them
-into the Brewfile with `brew bundle dump --force --file=~/Brewfile`.
+New App Store apps get captured the next time you run `./sync.sh` (see §9).
 
 ## 5. SSH / GPG keys
 
 Keys are **never** committed. Copy them from the old machine (or a backup):
 
 ```sh
-# from the old machine
+# SSH — from the old machine
 rsync -av ~/.ssh/ newmachine:~/.ssh/
 chmod 700 ~/.ssh && chmod 600 ~/.ssh/*
+
+# GPG (if you sign commits) — on the old machine, then import on the new one
+gpg --export-secret-keys --armor > secret.asc   # old machine; delete after import
+gpg --import secret.asc                          # new machine
 ```
 
-Re-add keys to the agent / GitHub as needed.
+Re-add keys to the agent / GitHub as needed (`ssh-add`, upload the public key).
 
 ## 6. App settings that sync themselves
 
@@ -80,18 +87,17 @@ Re-add keys to the agent / GitHub as needed.
 - **Keyboard Maestro:** Preferences → General → "Macro Sync…" → open the synced
   file in `~/Dropbox`.
 
-## 7. Apps installed by hand
+## 7. Org / MDM-managed apps
 
-- **Adobe Creative Cloud** (Photoshop, Lightroom, InDesign) — personal, not
-  work-managed. The Creative Cloud desktop app installs automatically via the
-  Brewfile (`cask "adobe-creative-cloud"`); just sign in and install the
-  individual apps from it.
 - **Okta Verify**, **Falcon**, **Iru** (formerly Kandji Self Service) — provided
-  and managed by work tooling, not this repo. Get them from your MDM / IT portal.
+  and managed by work tooling, not this repo. Install from your MDM / IT portal.
+
+(Adobe Creative Cloud is personal and installs via the Brewfile cask; just sign
+in and install the individual apps from the Creative Cloud desktop app.)
 
 ## 8. macOS system defaults (optional)
 
-Review and run the conservative system-preferences script:
+`install.sh` offers to apply these during setup. To review or run them yourself:
 
 ```sh
 ./.macos
@@ -101,10 +107,14 @@ Log out / restart afterward for everything to take effect.
 
 ## 9. Re-snapshotting (keep the repo current)
 
+Run the helper periodically. It flags Homebrew/App Store drift (anything
+installed but not yet in the Brewfile) and refreshes the exported app settings
+and Karabiner config:
+
 ```sh
-brew bundle dump --force --file=~/Brewfile   # packages, casks, extensions
-./defaults/export.sh                         # app settings (Rectangle, Ice, …)
-cp ~/.config/karabiner/karabiner.json karabiner/karabiner.json
+./sync.sh
 ```
 
-Then commit and push.
+Then review `git diff`, add anything it flagged to the Brewfile by hand, and
+commit. (The Brewfile is edited by hand on purpose, to keep its grouping and
+comments — `sync.sh` reports drift rather than overwriting it.)

@@ -67,6 +67,19 @@ step "Restore app configs"
 "$DIR/defaults/import.sh" || echo "defaults import skipped/partial."
 "$DIR/karabiner/restore.sh" || echo "karabiner restore skipped."
 
+step "macOS system defaults (optional)"
+if [ -t 0 ]; then
+  read -r -p "  Apply macOS system defaults from ./.macos now? (y/N) " -n 1 macos_reply
+  echo
+  if [[ ${macos_reply:-} =~ ^[Yy]$ ]]; then
+    "$DIR/.macos"
+  else
+    echo "skipped — run ./.macos yourself anytime."
+  fi
+else
+  echo "skipped (non-interactive) — run ./.macos yourself anytime."
+fi
+
 step "Done"
 cat <<'EOF'
 Base setup complete. Finish the manual steps in MIGRATION.md:

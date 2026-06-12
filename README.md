@@ -118,18 +118,15 @@ Re-snapshot the current machine any time with `./defaults/export.sh`, then commi
 
 It is intentionally **not** run by `install.sh`. Some changes need a logout/restart to fully take effect.
 
-### Other applications
+### Applications
 
-Most of these now install automatically via the `Brewfile` casks (Step 3). This list is a reference of what's expected on the machine; App Store-only and org/MDM-managed apps (called out in [MIGRATION.md](MIGRATION.md)) still need a manual install.
+The [`Brewfile`](Brewfile) is the **single source of truth** for installed software — Homebrew formulae, GUI apps (casks, grouped by category), and Mac App Store apps (`mas`). `brew bundle install` (Step 3, or `install.sh`) installs them all, so there's no parallel app list to keep in sync here.
 
-Some to remember:
-* **Editors/Dev:** Cursor, Visual Studio Code, Ghostty, OrbStack
-* **Notes/PKM:** Obsidian, Notion, Things3, Byword
-* **Window/Input:** Alfred 5, Rectangle, Karabiner-Elements, Keyboard Maestro, Hyperkey, Ice
-* **Comms:** Slack, Discord, Telegram, WhatsApp, Zoom
-* **Media/Creative:** Adobe CC (Photoshop, Lightroom, InDesign), OBS, Descript, Plex, Infuse
-* **Storage/Sync:** Dropbox (also installed via the Brewfile; `~/Dropbox` backs the `t` todo helper)
-* **Security:** Bitwarden, Tailscale, NordVPN, Okta Verify, Yubico Authenticator
+Not covered by the Brewfile, by design:
+* **Chrome extensions** — listed below; the Web Store has no CLI installer.
+* **Org / MDM-managed apps** (Okta Verify, Falcon, Iru) — installed from your IT portal. See [MIGRATION.md](MIGRATION.md).
+
+`~/Dropbox` backs the `t` todo helper and syncs Alfred / Keyboard Maestro settings.
 
 ### Chrome Extensions
 
