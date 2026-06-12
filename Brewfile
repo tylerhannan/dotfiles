@@ -145,6 +145,7 @@ cask "adobe-creative-cloud"
 
 # Security & network
 cask "bitwarden"
+cask "lastpass"
 cask "tailscale"
 cask "nordvpn"
 cask "yubico-authenticator"

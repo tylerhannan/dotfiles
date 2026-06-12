@@ -78,6 +78,18 @@ gpg --import secret.asc                          # new machine
 
 Re-add keys to the agent / GitHub as needed (`ssh-add`, upload the public key).
 
+**GitHub auth is HTTPS, not SSH.** Git talks to GitHub over HTTPS via the `gh`
+CLI (installed by the Brewfile), with the token cached in the macOS keychain
+(`credential.helper = osxkeychain`). The token lives in the keychain, not in a
+file, so there is nothing to copy from the old machine — just re-authenticate:
+
+```sh
+gh auth login   # browser/device flow; re-creates the token in the keychain
+```
+
+After that, `git` over HTTPS works with no SSH key involved. (The only SSH key
+here is for the prod bastion host; see the `~/.ssh/config` host entry.)
+
 **No old machine handy?** Keep the private keys in Bitwarden (secure-note text or
 a file attachment), then paste/download them on the new machine and fix
 permissions as above. This repo deliberately stores no secrets and no encrypted
