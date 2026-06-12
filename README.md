@@ -63,7 +63,7 @@ git config --file ~/.gitconfig.local user.name "Your Name Here"
 git config --file ~/.gitconfig.local user.email email@domain.com
 ```
 
-If you cloned without `--recurse-submodules` (so the Vim plugins under `.vim/bundle` are empty), pull them in with:
+If you cloned without `--recurse-submodules` (so the Vim plugins under `.vim/pack/plugins/start` are empty), pull them in with:
 
 ```sh
 git submodule update --init --recursive

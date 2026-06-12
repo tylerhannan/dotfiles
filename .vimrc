@@ -1,14 +1,10 @@
-" Needed on some linux distros.
-" " see
-" http://www.adamlowe.me/2009/12/vim-destroys-all-other-rails-editors.html
-filetype off
-call pathogen#helptags()
-call pathogen#incubate()
-
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+" Load Vim 8+ native packages from .vim/pack/*/start (replaces Pathogen).
+" Must run before the colorscheme below so solarized8 is on the runtimepath.
+silent! packloadall
 
 " Disable the splash screen
 :set shortmess +=I
