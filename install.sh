@@ -43,7 +43,11 @@ step "Symlink dotfiles into \$HOME"
 "$DIR/bootstrap.sh" --force
 
 step "Install Homebrew bundle (formulae, casks, extensions)"
-brew bundle install --file="$HOME/Brewfile"
+echo "Tip: sign into the App Store first so the 'mas' apps install too."
+# Non-fatal: a missing App Store sign-in makes mas entries fail, but the
+# formulae and casks should still install. Re-run after signing in.
+brew bundle install --file="$HOME/Brewfile" \
+  || echo "brew bundle reported failures (often the mas/App Store apps) — re-run after signing into the App Store."
 
 step "Restore app configs"
 "$DIR/defaults/import.sh" || echo "defaults import skipped/partial."

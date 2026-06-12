@@ -53,7 +53,7 @@ xcode-select --install
 ```sh
 git clone --recurse-submodules https://github.com/tylerhannan/dotfiles.git
 cd dotfiles
-source bootstrap.sh
+./bootstrap.sh
 ```
 
 Set your git identity in the untracked local file (the tracked `.gitconfig` includes it):

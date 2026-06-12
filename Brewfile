@@ -83,6 +83,8 @@ brew "python@3.11"
 brew "python@3.12"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.13"
+# Static analysis tool for shell scripts
+brew "shellcheck"
 # Terminal multiplexer with VT100/ANSI terminal emulation
 brew "screen"
 # Programmatically correct mistyped console commands
