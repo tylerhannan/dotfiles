@@ -1,0 +1,89 @@
+# New-Machine Migration
+
+The goal of this repo is to get a brand-new Mac productive with as little manual
+work as possible. Most of it is automated by [`install.sh`](install.sh); this
+file is the checklist for the parts that can't (or shouldn't) be scripted.
+
+## 1. Run the automated setup
+
+```sh
+git clone --recurse-submodules https://github.com/tylerhannan/dotfiles.git
+cd dotfiles
+./install.sh
+```
+
+`install.sh` installs the Command Line Tools + Homebrew, symlinks the dotfiles,
+runs `brew bundle install` (formulae, casks, and editor extensions), and
+restores the app configs under `defaults/` and `karabiner/`.
+
+## 2. Git identity
+
+Not stored in this repo (kept out of version control on purpose):
+
+```sh
+git config --global user.name "Tyler Hannan"
+git config --global user.email "you@example.com"
+```
+
+## 3. Login shell
+
+A fresh macOS defaults to `zsh`, so these bash dotfiles won't load until you
+switch:
+
+```sh
+chsh -s /bin/bash
+```
+
+(Optionally `brew install bash` first for a modern bash, then `chsh -s` to it
+after adding it to `/etc/shells`.)
+
+## 4. App Store apps (`mas`)
+
+The Brewfile installs `mas`, but App Store apps must be added after signing in:
+
+```sh
+# Sign into the App Store app first, then:
+mas list                      # see what's installed (on the OLD machine)
+mas install <id>              # install on the new machine
+```
+
+App Store-only apps to reinstall: **Things 3, Infuse, Byword** (and Apple's
+Keynote/Numbers/Pages if needed). After installing them you can capture them
+into the Brewfile with `brew bundle dump --force --file=~/Brewfile`.
+
+## 5. SSH / GPG keys
+
+Keys are **never** committed. Copy them from the old machine (or a backup):
+
+```sh
+# from the old machine
+rsync -av ~/.ssh/ newmachine:~/.ssh/
+chmod 700 ~/.ssh && chmod 600 ~/.ssh/*
+```
+
+Re-add keys to the agent / GitHub as needed.
+
+## 6. App settings that sync themselves
+
+- **Cursor / VS Code:** enable Settings Sync (signed-in) — extensions are
+  already installed via the Brewfile.
+- **Alfred:** Preferences → Advanced → "Set preferences folder…" → point at
+  `~/Dropbox`; the new machine picks up workflows, snippets, and themes.
+- **Keyboard Maestro:** Preferences → General → "Macro Sync…" → open the synced
+  file in `~/Dropbox`.
+
+## 7. Org / MDM-managed apps
+
+Installed and managed by work tooling, not this repo: **Adobe Creative Cloud**
+(Photoshop, Lightroom, InDesign), **Okta Verify**, **Falcon**, **Kandji Self
+Service**. Get these from your MDM / Creative Cloud / IT portal.
+
+## 8. Re-snapshotting (keep the repo current)
+
+```sh
+brew bundle dump --force --file=~/Brewfile   # packages, casks, extensions
+./defaults/export.sh                         # app settings (Rectangle, Ice, …)
+cp ~/.config/karabiner/karabiner.json karabiner/karabiner.json
+```
+
+Then commit and push.

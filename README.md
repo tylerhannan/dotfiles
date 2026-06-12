@@ -11,6 +11,22 @@ This includes the following Vim plugins:
 Setup
 -----
 
+### Quick start (new machine)
+
+One command does the whole automated setup — Command Line Tools, Homebrew, dotfile symlinks, `brew bundle install` (formulae + casks + editor extensions), and app-config restore:
+
+```sh
+git clone --recurse-submodules https://github.com/tylerhannan/dotfiles.git
+cd dotfiles
+./install.sh
+```
+
+Then finish the handful of things that can't be scripted (git identity, login shell, App Store apps, SSH keys, settings sync) using the checklist in [MIGRATION.md](MIGRATION.md).
+
+The rest of this section documents the same steps manually, for when you want to step through them one at a time.
+
+### Manual steps
+
 Start by installing Xcode and the Command Line Tools:
 
 ```sh
@@ -81,7 +97,8 @@ Re-snapshot the current machine any time with `./defaults/export.sh`, then commi
 - Keyboard Maestro: Preferences → General → "Macro Sync…" to a file in `~/Dropbox`, then "Open existing" on the new machine.
 
 ### Other applications
-Check out those App Store purchases...the history makes life easy.
+
+Most of these now install automatically via the `Brewfile` casks (Step 3). This list is a reference of what's expected on the machine; App Store-only and org/MDM-managed apps (called out in [MIGRATION.md](MIGRATION.md)) still need a manual install.
 
 Some to remember:
 * **Editors/Dev:** Cursor, Visual Studio Code, Ghostty, OrbStack
