@@ -17,10 +17,14 @@ set nocompatible
 if has( 'gui_running' )
   set transparency=0
   set background=dark
-  colorscheme solarized
+  colorscheme solarized8
 else
+  " Enable 24-bit true color so solarized8 renders accurately in the terminal.
+  set termguicolors
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   set background=dark
-  colorscheme solarized
+  colorscheme solarized8
 endif
 
 " ================ General Config ====================
