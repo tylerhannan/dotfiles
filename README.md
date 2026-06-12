@@ -11,19 +11,21 @@ This includes the following Vim plugins:
 Setup
 -----
 
-Start by installing XCode and ["Command Line Tools"](http://railsapps.github.io/xcode-command-line-tools.html)
+Start by installing Xcode and the Command Line Tools:
 
-### Start at the beginning
+```sh
+xcode-select --install
+```
 
-There is probably a better logical order than this, but it is what came out of my fingers.
+### Step 1: Install Homebrew
 
 ```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-brew bundle --file=~/Brewfile
 ```
 
-### Time for some dotfiles
+### Step 2: Clone the dotfiles and bootstrap
+
+`bootstrap.sh` rsyncs the dotfiles (including the `Brewfile`) into your home directory.
 
 ```sh
 git config --global user.name "Your Name Here"
@@ -33,9 +35,21 @@ cd dotfiles
 source bootstrap.sh
 ```
 
-### Casks are our friend
+### Step 3: Install everything from the Brewfile
 
-GUI apps are installed as casks straight from the `Brewfile` (modern `brew bundle` handles `cask` entries), so the `brew bundle` step above covers them. The legacy `Caskfile` is kept for reference only.
+The `Brewfile` is a single manifest of Homebrew formulae, casks (GUI apps), taps, and VSCode/Cursor extensions. Run:
+
+```sh
+brew bundle install --file=~/Brewfile
+```
+
+To re-snapshot this machine into the Brewfile after installing or removing software (then commit it back to the repo):
+
+```sh
+brew bundle dump --force --file=~/Brewfile
+```
+
+> Note: the old separate `Caskfile` / `brew cask` workflow is gone — casks now live in the `Brewfile` as `cask "..."` entries.
 
 ### Other applications
 Check out those App Store purchases...the history makes life easy.
