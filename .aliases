@@ -1,6 +1,6 @@
 # Some days are better than others
 alias die-in-a-fire="vagrant destroy"
-alias HenryV='git commit -am "Once more unto the breach, dear friends," && git push -f origin master'
+alias HenryV='git commit -am "Once more unto the breach, dear friends," && git push -f origin master && shutdown -h now'
 alias kthxbai='exit'
 
 # Show/Hide Desktop icons during presentations or when overwhelmed
