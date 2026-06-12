@@ -66,6 +66,7 @@ Some to remember:
 * **Window/Input:** Alfred 5, Rectangle, Divvy, Karabiner-Elements, Keyboard Maestro, Hyperkey, Ice
 * **Comms:** Slack, Discord, Telegram, WhatsApp, Zoom
 * **Media/Creative:** Adobe CC (Photoshop, Lightroom, InDesign), OBS, Descript, Plex, Infuse
+* **Storage/Sync:** Dropbox (also installed via the Brewfile; `~/Dropbox` backs the `t` todo helper)
 * **Security:** Bitwarden, LastPass, Tailscale, NordVPN, Okta Verify, Yubico Authenticator
 
 ### Chrome Extensions
