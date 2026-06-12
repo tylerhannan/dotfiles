@@ -78,13 +78,19 @@ gpg --import secret.asc                          # new machine
 
 Re-add keys to the agent / GitHub as needed (`ssh-add`, upload the public key).
 
+**No old machine handy?** Keep the private keys in Bitwarden (secure-note text or
+a file attachment), then paste/download them on the new machine and fix
+permissions as above. This repo deliberately stores no secrets and no encrypted
+blobs — credentials live in the password manager or come off the old machine.
+
 ## 6. App settings
 
 Restored automatically by `install.sh` (committed in this repo):
 
 - **Ghostty:** terminal config (`ghostty/`). The configured font,
   **BerkeleyMono Nerd Font**, is paid and is *not* installed by this repo —
-  install it separately or Ghostty falls back to a default.
+  keep the font file in Dropbox and copy it into `~/Library/Fonts` on the new
+  machine (`ghostty/restore.sh` warns if it's missing), or Ghostty falls back.
 - **Karabiner-Elements**, **Rectangle**, **Hyperkey**, **Ice**, **The Clock**,
   **SteerMouse** — see `karabiner/` and `defaults/`.
 

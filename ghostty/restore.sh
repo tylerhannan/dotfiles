@@ -24,3 +24,10 @@ cp "$DIR/config" "$DEST/config"
 
 echo "Ghostty config restored to $DEST/config (previous file backed up if present)."
 echo "Restart Ghostty or reload the config to apply."
+
+# The config asks for BerkeleyMono Nerd Font, which is paid and not shipped
+# here. Warn if it isn't installed so the fallback font isn't a surprise.
+if ! compgen -G "$HOME/Library/Fonts/*[Bb]erkeley*" >/dev/null \
+   && ! compgen -G "/Library/Fonts/*[Bb]erkeley*" >/dev/null; then
+  echo "Note: BerkeleyMono Nerd Font not found — install it (e.g. from your Dropbox font backup into ~/Library/Fonts) or Ghostty falls back to a default."
+fi

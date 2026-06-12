@@ -53,4 +53,8 @@ if [ -f "$GHOSTTY_CONF" ]; then
 fi
 
 echo
+echo "Note: only Homebrew/App Store-managed software is checked. Apps installed"
+echo "      by hand (drag-to-Applications, vendor installers) won't show as drift"
+echo "      until they're added to the Brewfile."
+echo
 echo "Done. Review with 'git diff' and update the Brewfile by hand for any drift listed above."
