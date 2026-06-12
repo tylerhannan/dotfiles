@@ -129,7 +129,7 @@ Some to remember:
 * **Comms:** Slack, Discord, Telegram, WhatsApp, Zoom
 * **Media/Creative:** Adobe CC (Photoshop, Lightroom, InDesign), OBS, Descript, Plex, Infuse
 * **Storage/Sync:** Dropbox (also installed via the Brewfile; `~/Dropbox` backs the `t` todo helper)
-* **Security:** Bitwarden, LastPass, Tailscale, NordVPN, Okta Verify, Yubico Authenticator
+* **Security:** Bitwarden, Tailscale, NordVPN, Okta Verify, Yubico Authenticator
 
 ### Chrome Extensions
 
@@ -137,7 +137,6 @@ Some to remember:
 * [Claude](https://chromewebstore.google.com/detail/fcoeoabgfenejglbffodgkkbkcdhcgfn)
 * [Google Docs Offline](https://chromewebstore.google.com/detail/ghbmnnjooekpmoecnnnilnnbdlolhkhi)
 * [Okta Browser Plugin](https://chromewebstore.google.com/detail/glnpjglilkicbckjpbgcfkogebgllemb)
-* [LastPass: Free Password Manager](https://chromewebstore.google.com/detail/hdokiejnpimakedhajhdlcegeplioahd)
 * [Grammarly](https://chromewebstore.google.com/detail/kbfnbcaeplbcioakkpcpgfkobkghlhen)
 * [SVG Export](https://chromewebstore.google.com/detail/naeaaedieihlkmdajjefioajbbdbdjgp)
 * [Privacy Badger](https://chromewebstore.google.com/detail/pkehgijcmpdhfbdbbnkijodmdjhbjlgp)
