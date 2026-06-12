@@ -9,8 +9,9 @@
 # Check what is missing without installing:
 #   brew bundle check --file=~/Brewfile
 #
-# Covers Homebrew formulae, casks, taps, and VSCode/Cursor extensions.
-# (Mac App Store apps would appear as `mas "..."` lines if `mas` were installed.)
+# Covers Homebrew formulae, casks, taps, Mac App Store apps (mas), and
+# VSCode/Cursor extensions. `mas` entries require being signed into the
+# App Store before `brew bundle install`.
 
 tap "nikitabobko/tap"
 
@@ -152,6 +153,17 @@ cask "garmin-express"
 # Misc / research / firmware
 cask "mendeley"
 cask "qmk-toolbox"
+
+# --- Mac App Store apps (sign into the App Store first) ----------------------
+mas "Byword", id: 420212497
+mas "Deliveries", id: 290986013
+mas "Infuse", id: 1136220934
+mas "Keynote", id: 409183694
+mas "Numbers", id: 409203825
+mas "reMarkable", id: 1276493162
+mas "Screen Mirror to TV & Device", id: 1496988766
+mas "The Clock", id: 488764545
+mas "Things", id: 904280696
 
 vscode "anthropic.claude-code"
 vscode "ecmel.vscode-html-css"
