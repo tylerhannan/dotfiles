@@ -138,6 +138,7 @@ cask "gotomeeting"
 cask "vlc"
 cask "descript"
 cask "plex"
+cask "obs"
 
 # Creative (installs the Creative Cloud desktop app; pick individual apps from it)
 cask "adobe-creative-cloud"

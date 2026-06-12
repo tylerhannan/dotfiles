@@ -152,3 +152,15 @@ mkd thesaurus
 wget http://www.gutenberg.org/dirs/etext02/mthes10.zip
 xt mthes10.zip
 ```
+
+## Development
+
+A `shellcheck` pre-commit hook lives in `hooks/`. Enable it once per clone:
+
+```sh
+git config core.hooksPath hooks
+```
+
+It lints the shell scripts and bash config files before each commit (and is
+skipped automatically if `shellcheck` isn't installed). Bypass a single commit
+with `git commit --no-verify`.

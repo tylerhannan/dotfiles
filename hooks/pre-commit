@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+#
+# Pre-commit hook: lint shell scripts with shellcheck.
+#
+# Enable once per clone with:
+#   git config core.hooksPath hooks
+#
+# Bypass for a single commit (not recommended) with:
+#   git commit --no-verify
+
+set -euo pipefail
+
+if ! command -v shellcheck >/dev/null 2>&1; then
+  echo "pre-commit: shellcheck not installed; skipping. Install with 'brew install shellcheck'." >&2
+  exit 0
+fi
+
+# Executable shell scripts (they carry a shebang).
+scripts=(
+  bootstrap.sh
+  install.sh
+  defaults/export.sh
+  defaults/import.sh
+  karabiner/restore.sh
+)
+
+# Bash config files: no shebang, so declare the dialect.
+bash_configs=(
+  .bash_profile
+  .bash_prompt
+  .aliases
+  .functions
+)
+
+# SC1090/SC1091 are disabled throughout: these scripts and config files
+# intentionally source paths shellcheck can't resolve statically
+# (e.g. ~/.bash_profile, ~/.orbstack/...).
+status=0
+shellcheck --exclude=SC1090,SC1091 "${scripts[@]}" || status=1
+shellcheck -x --shell=bash --exclude=SC1090,SC1091 "${bash_configs[@]}" || status=1
+
+if [ "$status" -ne 0 ]; then
+  echo "pre-commit: shellcheck found issues (see above)." >&2
+fi
+
+exit "$status"

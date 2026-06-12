@@ -24,7 +24,7 @@ function xt() {
 
 # Create a new directory and enter it
 function mkd() {
-  mkdir -p "$1" && cd "$1"
+  mkdir -p "$1" && cd "$1" || return
 }
 
 # Use Git’s colored diff when available
