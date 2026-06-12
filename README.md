@@ -55,7 +55,7 @@ brew bundle dump --force --file=~/Brewfile
 Check out those App Store purchases...the history makes life easy.
 
 Some to remember:
-* **Editors/Dev:** Cursor, Visual Studio Code, iTerm, Ghostty, OrbStack
+* **Editors/Dev:** Cursor, Visual Studio Code, Ghostty, OrbStack
 * **Notes/PKM:** Obsidian, Notion, Things3, Byword
 * **Window/Input:** Alfred 5, Rectangle, Divvy, Karabiner-Elements, Keyboard Maestro, Hyperkey, Ice
 * **Comms:** Slack, Discord, Telegram, WhatsApp, Zoom
