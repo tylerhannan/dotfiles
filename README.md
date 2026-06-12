@@ -2,7 +2,7 @@ dotfiles
 ========
 I get rather tired of resetting my machine every time I change, and/or inadvertently destroy it.  To that end, this repo is simple personal configurations.  Attribution, where remembered, is given.
 
-It is extraordinarily tempting to script much of the below...but, frankly, there are situations where it is disconcerting.  The flexibility to step through, install by install, ensures that I don't do something horrifically stupid.
+`install.sh` automates the full setup in one command, but every step is also documented manually below so you can step through it one install at a time when you'd rather not run the whole thing blind.
 
 ### Documentation
 

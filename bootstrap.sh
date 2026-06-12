@@ -59,6 +59,9 @@ doIt() {
   # Make sure the Vim plugin submodules are populated.
   git -C "$DOTFILES_DIR" submodule update --init --recursive
 
+  # Enable the repo's shellcheck pre-commit hook for this clone.
+  git -C "$DOTFILES_DIR" config core.hooksPath hooks
+
   for name in "${LINKS[@]}"; do
     link_one "$name"
   done
