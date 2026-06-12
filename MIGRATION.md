@@ -4,6 +4,11 @@ The goal of this repo is to get a brand-new Mac productive with as little manual
 work as possible. Most of it is automated by [`install.sh`](install.sh); this
 file is the checklist for the parts that can't (or shouldn't) be scripted.
 
+> This is the **runbook** — follow it top to bottom on a new machine. For a
+> repo overview, the optional step-by-step manual walkthrough of the automated
+> parts, and reference lists of apps and Chrome extensions, see the
+> [README](README.md).
+
 ## 1. Run the automated setup
 
 ```sh

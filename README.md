@@ -4,6 +4,13 @@ I get rather tired of resetting my machine every time I change, and/or inadverte
 
 It is extraordinarily tempting to script much of the below...but, frankly, there are situations where it is disconcerting.  The flexibility to step through, install by install, ensures that I don't do something horrifically stupid.
 
+### Documentation
+
+- **README.md** (this file) — overview of what the repo contains and a detailed, step-by-step setup *reference* (including the optional manual walkthrough, app lists, and Chrome extensions).
+- **[MIGRATION.md](MIGRATION.md)** — the condensed *runbook* for setting up a brand-new Mac: run `./install.sh`, then work the checklist of things that can't be scripted. **Start there when migrating to a new machine.**
+
+In short: `install.sh` does the work, `MIGRATION.md` is the checklist that wraps it, and this README is the reference behind both.
+
 This includes the following Vim plugins:
 * [NERD Tree](https://github.com/scrooloose/nerdtree)
 * [vim-solarized8](https://github.com/lifepillar/vim-solarized8)
@@ -21,9 +28,9 @@ cd dotfiles
 ./install.sh
 ```
 
-Then finish the handful of things that can't be scripted (git identity, login shell, App Store apps, SSH keys, settings sync) using the checklist in [MIGRATION.md](MIGRATION.md).
+Then finish the handful of things that can't be scripted (git identity, login shell, App Store apps, SSH keys, settings sync) using the checklist in **[MIGRATION.md](MIGRATION.md)** — that's the authoritative new-machine runbook.
 
-The rest of this section documents the same steps manually, for when you want to step through them one at a time.
+The rest of this section documents the same automated steps manually, for when you'd rather step through them one install at a time (the **Manual steps** below mirror what `install.sh` does; `MIGRATION.md` adds the non-scriptable follow-ups).
 
 ### Manual steps
 
