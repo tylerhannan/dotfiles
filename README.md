@@ -30,9 +30,15 @@ xcode-select --install
 ```sh
 git config --global user.name "Your Name Here"
 git config --global user.email email@domain.com
-git clone https://github.com/tylerhannan/dotfiles.git
+git clone --recurse-submodules https://github.com/tylerhannan/dotfiles.git
 cd dotfiles
 source bootstrap.sh
+```
+
+If you cloned without `--recurse-submodules` (so the Vim plugins under `.vim/bundle` are empty), pull them in with:
+
+```sh
+git submodule update --init --recursive
 ```
 
 ### Step 3: Install everything from the Brewfile
