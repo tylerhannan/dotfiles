@@ -99,8 +99,7 @@ brew "yt-dlp"
 # --- GUI applications --------------------------------------------------------
 # `brew bundle dump --force` will re-sort these and add description comments.
 # App Store-only apps (Things 3, Infuse, Byword, ...) and org/MDM-managed apps
-# (Adobe CC, Okta Verify, Falcon, Kandji) are intentionally not listed here.
-# See MIGRATION.md.
+# (Okta Verify, Falcon, Iru) are intentionally not listed here. See MIGRATION.md.
 
 # Editors & dev
 cask "cursor"
@@ -139,6 +138,9 @@ cask "gotomeeting"
 cask "vlc"
 cask "descript"
 cask "plex"
+
+# Creative (installs the Creative Cloud desktop app; pick individual apps from it)
+cask "adobe-creative-cloud"
 
 # Security & network
 cask "bitwarden"

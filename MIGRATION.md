@@ -83,9 +83,9 @@ Re-add keys to the agent / GitHub as needed.
 ## 7. Apps installed by hand
 
 - **Adobe Creative Cloud** (Photoshop, Lightroom, InDesign) — personal, not
-  work-managed. Install the Creative Cloud desktop app from adobe.com (or
-  `brew install --cask adobe-creative-cloud`), then install the individual
-  apps from it.
+  work-managed. The Creative Cloud desktop app installs automatically via the
+  Brewfile (`cask "adobe-creative-cloud"`); just sign in and install the
+  individual apps from it.
 - **Okta Verify**, **Falcon**, **Iru** (formerly Kandji Self Service) — provided
   and managed by work tooling, not this repo. Get them from your MDM / IT portal.
 
