@@ -156,6 +156,11 @@ cask "appcleaner"
 cask "sonos"
 cask "garmin-express"
 
+# Peripherals (hardware companion apps)
+cask "insta360-link-controller"
+# No Homebrew cask — install by hand from the vendor on the new machine:
+#   Pocket Sync
+
 # Misc / research / firmware
 cask "mendeley"
 cask "qmk-toolbox"
