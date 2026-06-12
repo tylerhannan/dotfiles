@@ -153,12 +153,6 @@ cask "dropbox"
 cask "appcleaner"
 cask "sonos"
 
-# Peripherals (hardware companion apps)
-cask "insta360-link-controller"
-
-# Misc / research / firmware
-cask "mendeley"
-
 # --- Mac App Store apps (sign into the App Store first) ----------------------
 mas "Byword", id: 420212497
 mas "Deliveries", id: 290986013
