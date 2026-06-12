@@ -20,6 +20,7 @@ scripts=(
   bootstrap.sh
   install.sh
   sync.sh
+  .macos
   defaults/export.sh
   defaults/import.sh
   karabiner/restore.sh
