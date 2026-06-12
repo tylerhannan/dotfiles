@@ -81,7 +81,17 @@ Installed and managed by work tooling, not this repo: **Adobe Creative Cloud**
 (Photoshop, Lightroom, InDesign), **Okta Verify**, **Falcon**, **Kandji Self
 Service**. Get these from your MDM / Creative Cloud / IT portal.
 
-## 8. Re-snapshotting (keep the repo current)
+## 8. macOS system defaults (optional)
+
+Review and run the conservative system-preferences script:
+
+```sh
+./.macos
+```
+
+Log out / restart afterward for everything to take effect.
+
+## 9. Re-snapshotting (keep the repo current)
 
 ```sh
 brew bundle dump --force --file=~/Brewfile   # packages, casks, extensions

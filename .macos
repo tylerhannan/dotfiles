@@ -1,0 +1,99 @@
+#!/usr/bin/env bash
+#
+# .macos — conservative macOS system preferences for a new machine.
+#
+# Review before running. Everything here is user-domain (no sudo) and
+# reversible by flipping the value or via System Settings. Run manually:
+#   ./.macos
+#
+# Loosely inspired by https://github.com/mathiasbynens/dotfiles/blob/main/.macos
+# but trimmed to a safe, opinionated-but-mild subset.
+
+set -uo pipefail
+
+# Close System Settings to avoid it overwriting changes on exit.
+osascript -e 'tell application "System Settings" to quit' 2>/dev/null || true
+
+###############################################################################
+# Keyboard & text input                                                       #
+###############################################################################
+
+# Fast key repeat (great for Vim). InitialKeyRepeat: delay before repeat.
+defaults write NSGlobalDomain KeyRepeat -int 2
+defaults write NSGlobalDomain InitialKeyRepeat -int 15
+
+# Enable key repeat instead of the accent picker on press-and-hold.
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+
+# Disable auto-correct / auto-capitalize / smart quotes & dashes (dev-friendly).
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
+defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
+
+###############################################################################
+# Finder                                                                      #
+###############################################################################
+
+# Show all filename extensions, the path bar, and the status bar.
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+defaults write com.apple.finder ShowPathbar -bool true
+defaults write com.apple.finder ShowStatusBar -bool true
+
+# Show the full POSIX path in the Finder window title.
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+
+# Use list view by default and keep folders on top.
+defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
+defaults write com.apple.finder _FXSortFoldersFirst -bool true
+
+# Search the current folder by default (instead of the whole Mac).
+defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+
+# Don't warn when changing a file extension.
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+
+# Avoid creating .DS_Store files on network and USB volumes.
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+
+# Unhide the ~/Library folder.
+chflags nohidden "${HOME}/Library" 2>/dev/null || true
+
+###############################################################################
+# Screenshots                                                                 #
+###############################################################################
+
+# Save screenshots to ~/Screenshots as PNG without a window shadow.
+mkdir -p "${HOME}/Screenshots"
+defaults write com.apple.screencapture location -string "${HOME}/Screenshots"
+defaults write com.apple.screencapture type -string "png"
+defaults write com.apple.screencapture disable-shadow -bool true
+
+###############################################################################
+# Dialogs & panels                                                            #
+###############################################################################
+
+# Expand the Save and Print panels by default.
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
+defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
+defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
+
+###############################################################################
+# Dock                                                                        #
+###############################################################################
+
+# Don't rearrange Spaces based on most recent use, and hide recent apps.
+defaults write com.apple.dock mru-spaces -bool false
+defaults write com.apple.dock show-recents -bool false
+
+###############################################################################
+# Apply                                                                       #
+###############################################################################
+
+for app in "Finder" "Dock" "SystemUIServer"; do
+  killall "${app}" >/dev/null 2>&1 || true
+done
+
+echo "macOS defaults applied. Some changes need a logout/restart to fully take effect."

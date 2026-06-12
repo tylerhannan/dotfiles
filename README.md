@@ -101,6 +101,16 @@ Re-snapshot the current machine any time with `./defaults/export.sh`, then commi
 - Alfred: Preferences → Advanced → "Set preferences folder…" pointed at Dropbox (`~/Dropbox`), then point the new machine at the same folder.
 - Keyboard Maestro: Preferences → General → "Macro Sync…" to a file in `~/Dropbox`, then "Open existing" on the new machine.
 
+### Step 5: macOS system defaults (optional)
+
+`.macos` applies conservative, user-domain system preferences (fast key repeat, Finder path/status bar and file extensions, screenshots to `~/Screenshots`, expanded save/print panels, fewer .DS_Store files, etc.). Review it first, then run it manually:
+
+```sh
+./.macos
+```
+
+It is intentionally **not** run by `install.sh`. Some changes need a logout/restart to fully take effect.
+
 ### Other applications
 
 Most of these now install automatically via the `Brewfile` casks (Step 3). This list is a reference of what's expected on the machine; App Store-only and org/MDM-managed apps (called out in [MIGRATION.md](MIGRATION.md)) still need a manual install.
