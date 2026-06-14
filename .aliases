@@ -10,6 +10,10 @@ alias ShowDesktop="defaults write com.apple.finder CreateDesktop -bool true && k
 alias SoAnnoying="launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist"
 alias BugMeAgain="launchctl load -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist"
 
+# Mute/unmute system UI sounds (screenshot, Trash, boot chime, etc.)
+alias QuietMac='defaults write NSGlobalDomain com.apple.sound.uiaudio.enabled -bool false && defaults write com.apple.screencapture disable-sound -bool true && sudo nvram SystemAudioVolume=" " 2>/dev/null; killall SystemUIServer 2>/dev/null || true'
+alias LoudMac='defaults write NSGlobalDomain com.apple.sound.uiaudio.enabled -bool true && defaults write com.apple.screencapture disable-sound -bool false && sudo nvram -d SystemAudioVolume 2>/dev/null; killall SystemUIServer 2>/dev/null || true'
+
 # Aliases for launching applications
 alias vlc='open -a VLC'
 alias mdown='open -a Byword'
