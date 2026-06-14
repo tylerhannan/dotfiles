@@ -91,7 +91,7 @@ brew bundle dump --force --file=~/Brewfile
 
 After the apps are installed (Step 3), restore their settings from this repo.
 
-**`defaults`-based settings** are captured as plists under `defaults/` — both third-party apps (Rectangle, Hyperkey, Ice, The Clock, SteerMouse) and a few macOS system domains: system keyboard shortcuts (`com.apple.symbolichotkeys`) and trackpad gestures (`com.apple.AppleMultitouchTrackpad`, `com.apple.driver.AppleBluetoothMultitouch.trackpad`). Restore them all at once:
+**`defaults`-based settings** are captured as plists under `defaults/` — third-party apps (Rectangle, Hyperkey, Ice, SteerMouse) and a few macOS system domains: system keyboard shortcuts (`com.apple.symbolichotkeys`) and trackpad gestures (`com.apple.AppleMultitouchTrackpad`, `com.apple.driver.AppleBluetoothMultitouch.trackpad`). Restore them all at once:
 
 ```sh
 ./defaults/import.sh
@@ -118,6 +118,14 @@ Re-snapshot the current machine any time with `./defaults/export.sh`, then commi
 ```
 
 Re-snapshot it any time with `./wallpaper/export.sh` (or `./sync.sh`).
+
+**The Clock** stores world clocks and menu bar display options in an App Group plist, not the sparse `defaults` domain:
+
+```sh
+./theclock/restore.sh
+```
+
+Re-snapshot with `./theclock/export.sh`. If the new Mac's config looks wrong, re-export from the **old Mac** first — that's where the real settings live.
 
 **Alfred** and **Keyboard Maestro** carry large, binary, and potentially secret-bearing data, so they are *not* committed here — use each app's own sync instead:
 
@@ -162,9 +170,11 @@ A small extra that would be silly to embed as a submodule or track in this repo:
 ```sh
 cd ~/.vim
 mkd thesaurus
-wget http://www.gutenberg.org/dirs/etext02/mthes10.zip
-xt mthes10.zip
+wget https://www.gutenberg.org/files/3202/files/mthesaur.txt
+wget https://www.gutenberg.org/files/3202/files/roget13a.txt
 ```
+
+(The old `mthes10.zip` URL on Gutenberg 404s; these are the same Moby Thesaurus files from ebook #3202.)
 
 ## Development
 

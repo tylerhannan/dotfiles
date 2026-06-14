@@ -100,8 +100,11 @@ Restored automatically by `install.sh` (committed in this repo):
   the Nerd Font–patched build so the `BerkeleyMono Nerd Font` glyphs resolve)
   and drop the `.otf`/`.ttf` files into `~/Library/Fonts`. Without it,
   `ghostty/restore.sh` warns and Ghostty silently falls back to a default.
-- **Karabiner-Elements**, **Rectangle**, **Hyperkey**, **Ice**, **The Clock**,
-  **SteerMouse** — see `karabiner/` and `defaults/`.
+- **Karabiner-Elements**, **Rectangle**, **Hyperkey**, **Ice**, **SteerMouse** —
+  see `karabiner/` and `defaults/`.
+- **The Clock** — world clocks and menu bar layout live in an App Group plist,
+  not the sparse `defaults` domain. See `theclock/` (`group-preferences.plist`).
+  Re-export from the **old Mac** if the new machine's config looks wrong.
 - **Desktop wallpaper** (`wallpaper/`) — the built-in dynamic wallpaper choice,
   restored from `wallpaper/Index.plist`. Reloads `WallpaperAgent`; log out/in if
   it doesn't update immediately.

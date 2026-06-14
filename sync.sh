@@ -55,6 +55,11 @@ fi
 echo "==> Refreshing wallpaper config"
 "$DIR/wallpaper/export.sh"
 
+if [ -f "$HOME/Library/Group Containers/3EYN7PPTPF.com.fabriceleyne.theclock/Library/Preferences/3EYN7PPTPF.com.fabriceleyne.theclock.plist" ]; then
+  echo "==> Refreshing The Clock config"
+  "$DIR/theclock/export.sh"
+fi
+
 echo
 echo "Note: only Homebrew/App Store-managed software is checked. Apps installed"
 echo "      by hand (drag-to-Applications, vendor installers) won't show as drift"

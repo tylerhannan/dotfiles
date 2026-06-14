@@ -9,7 +9,6 @@
 com.knollsoft.Rectangle
 com.knollsoft.Hyperkey
 com.jordanbaird.Ice
-com.fabriceleyne.theclock
 jp.plentycom.app.SteerMouse
 
 # --- macOS system settings --------------------------------------------------
