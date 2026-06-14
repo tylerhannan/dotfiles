@@ -93,7 +93,9 @@ deliberately stores no secrets: nothing to migrate here beyond the sign-in.
 
 Restored automatically by `install.sh` (committed in this repo):
 
-- **Ghostty:** terminal config (`ghostty/`). The configured font,
+- **Ghostty:** terminal config (`ghostty/`). Quick terminal is hyper+t via the
+  **Ghostty Quick Terminal** Keyboard Maestro macro (not a Ghostty global keybind).
+  The configured font,
   **BerkeleyMono Nerd Font**, is paid and is *not* installed by this repo — nor
   is it cached anywhere on the old machine, so there is nothing to copy across.
   Re-download it from your **Berkeley Graphics account** (usgraphics.com; grab
@@ -114,10 +116,10 @@ Sync themselves once you sign in / point them at the sync folder:
 
 - **Cursor / VS Code:** enable Settings Sync (signed-in) — extensions are
   already installed via the Brewfile.
-- **Alfred:** Preferences → Advanced → "Set preferences folder…" → point at
-  `~/Dropbox`; the new machine picks up workflows, snippets, and themes.
-- **Keyboard Maestro:** Preferences → General → "Macro Sync…" → open the synced
-  file in `~/Dropbox`.
+- **Alfred:** Preferences → Advanced → "Set preferences folder…" →
+  `~/Library/CloudStorage/Dropbox`.
+- **Keyboard Maestro:** Preferences → General → "Macro Sync…" → open
+  `~/Library/CloudStorage/Dropbox/Keyboard Maestro Macros.kmsync`.
 - **The Clock:** Preferences → Backup/Restore → **Restore from iCloud** (back up
   to iCloud on the old Mac first). World clocks and menu bar layout sync via
   iCloud, not the repo — copying plist files gets overwritten on launch.

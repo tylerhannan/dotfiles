@@ -105,7 +105,7 @@ Re-snapshot the current machine any time with `./defaults/export.sh`, then commi
 ./karabiner/restore.sh
 ```
 
-**Ghostty** keeps its config in `~/Library/Application Support/com.mitchellh.ghostty/config` (its font, BerkeleyMono Nerd Font, is paid and installed separately):
+**Ghostty** keeps its config in `~/Library/Application Support/com.mitchellh.ghostty/config` (its font, BerkeleyMono Nerd Font, is paid and installed separately). Quick terminal is on hyper+t via the **Ghostty Quick Terminal** Keyboard Maestro macro — the Ghostty global keybind stays off:
 
 ```sh
 ./ghostty/restore.sh
@@ -121,10 +121,10 @@ Re-snapshot it any time with `./wallpaper/export.sh` (or `./sync.sh`).
 
 **The Clock** syncs world clocks and menu bar layout via **iCloud**, not this repo. On the old Mac: Preferences → Backup/Restore → Back up to iCloud. On the new Mac: Restore from iCloud.
 
-**Alfred** and **Keyboard Maestro** carry large, binary, and potentially secret-bearing data, so they are *not* committed here — use each app's own sync instead:
+**Alfred** and **Keyboard Maestro** live in Dropbox, not this repo. On a new machine, point each app at the same sync folder:
 
-- Alfred: Preferences → Advanced → "Set preferences folder…" pointed at Dropbox (`~/Dropbox`), then point the new machine at the same folder.
-- Keyboard Maestro: Preferences → General → "Macro Sync…" to a file in `~/Dropbox`, then "Open existing" on the new machine.
+- Alfred: Preferences → Advanced → "Set preferences folder…" → `~/Library/CloudStorage/Dropbox`
+- Keyboard Maestro: Preferences → General → "Macro Sync…" → open `~/Library/CloudStorage/Dropbox/Keyboard Maestro Macros.kmsync`
 
 ### Step 5: macOS system defaults (optional)
 
@@ -143,8 +143,6 @@ The [`Brewfile`](Brewfile) is the **single source of truth** for installed softw
 Not covered by the Brewfile, by design:
 * **Chrome extensions** — listed below; the Web Store has no CLI installer.
 * **Org / MDM-managed apps** (Okta Verify, Falcon, Iru) — installed from your IT portal. See [MIGRATION.md](MIGRATION.md).
-
-`~/Dropbox` syncs Alfred / Keyboard Maestro settings.
 
 ### todo.txt
 
