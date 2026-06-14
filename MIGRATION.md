@@ -102,9 +102,6 @@ Restored automatically by `install.sh` (committed in this repo):
   `ghostty/restore.sh` warns and Ghostty silently falls back to a default.
 - **Karabiner-Elements**, **Rectangle**, **Hyperkey**, **Ice**, **SteerMouse** —
   see `karabiner/` and `defaults/`.
-- **The Clock** — world clocks and menu bar layout live in an App Group plist,
-  not the sparse `defaults` domain. See `theclock/` (`group-preferences.plist`).
-  Re-export from the **old Mac** if the new machine's config looks wrong.
 - **Desktop wallpaper** (`wallpaper/`) — the built-in dynamic wallpaper choice,
   restored from `wallpaper/Index.plist`. Reloads `WallpaperAgent`; log out/in if
   it doesn't update immediately.
@@ -121,6 +118,9 @@ Sync themselves once you sign in / point them at the sync folder:
   `~/Dropbox`; the new machine picks up workflows, snippets, and themes.
 - **Keyboard Maestro:** Preferences → General → "Macro Sync…" → open the synced
   file in `~/Dropbox`.
+- **The Clock:** Preferences → Backup/Restore → **Restore from iCloud** (back up
+  to iCloud on the old Mac first). World clocks and menu bar layout sync via
+  iCloud, not the repo — copying plist files gets overwritten on launch.
 
 ## 7. Org / MDM-managed apps
 

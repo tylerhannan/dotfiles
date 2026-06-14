@@ -119,13 +119,7 @@ Re-snapshot the current machine any time with `./defaults/export.sh`, then commi
 
 Re-snapshot it any time with `./wallpaper/export.sh` (or `./sync.sh`).
 
-**The Clock** stores world clocks and menu bar display options in an App Group plist, not the sparse `defaults` domain:
-
-```sh
-./theclock/restore.sh
-```
-
-Re-snapshot with `./theclock/export.sh`. If the new Mac's config looks wrong, re-export from the **old Mac** first — that's where the real settings live.
+**The Clock** syncs world clocks and menu bar layout via **iCloud**, not this repo. On the old Mac: Preferences → Backup/Restore → Back up to iCloud. On the new Mac: Restore from iCloud.
 
 **Alfred** and **Keyboard Maestro** carry large, binary, and potentially secret-bearing data, so they are *not* committed here — use each app's own sync instead:
 
