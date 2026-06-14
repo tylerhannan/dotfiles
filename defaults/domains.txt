@@ -5,8 +5,20 @@
 #
 # One bundle identifier per line. Blank lines and #comments are ignored.
 
+# --- Third-party apps -------------------------------------------------------
 com.knollsoft.Rectangle
 com.knollsoft.Hyperkey
 com.jordanbaird.Ice
 com.fabriceleyne.theclock
 jp.plentycom.app.SteerMouse
+
+# --- macOS system settings --------------------------------------------------
+# System keyboard shortcuts (Spotlight, Mission Control, screenshots, input
+# switching, …). Importing replaces the whole set with the captured one.
+com.apple.symbolichotkeys
+# Trackpad gestures: tap-to-click, two/three/four-finger swipes, pinch, rotate.
+# Built-in trackpad settings live in the normal (non-ByHost) domains, so they
+# export/import cleanly. Mission Control/App Exposé gesture *toggles* are macOS
+# defaults here (unset), so they're left alone.
+com.apple.AppleMultitouchTrackpad
+com.apple.driver.AppleBluetoothMultitouch.trackpad
