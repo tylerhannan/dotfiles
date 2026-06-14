@@ -91,7 +91,7 @@ brew bundle dump --force --file=~/Brewfile
 
 After the apps are installed (Step 3), restore their settings from this repo.
 
-**`defaults`-based apps** (Rectangle, Hyperkey, Ice, The Clock, SteerMouse) are captured as plists under `defaults/`. Restore them all at once:
+**`defaults`-based settings** are captured as plists under `defaults/` — both third-party apps (Rectangle, Hyperkey, Ice, The Clock, SteerMouse) and a few macOS system domains: system keyboard shortcuts (`com.apple.symbolichotkeys`) and trackpad gestures (`com.apple.AppleMultitouchTrackpad`, `com.apple.driver.AppleBluetoothMultitouch.trackpad`). Restore them all at once:
 
 ```sh
 ./defaults/import.sh
@@ -110,6 +110,14 @@ Re-snapshot the current machine any time with `./defaults/export.sh`, then commi
 ```sh
 ./ghostty/restore.sh
 ```
+
+**Desktop wallpaper** lives in the macOS wallpaper store (`~/Library/Application Support/com.apple.wallpaper/Store/Index.plist`), not a `defaults` domain. This machine uses Apple's built-in dynamic wallpapers, so the committed config migrates with no image files:
+
+```sh
+./wallpaper/restore.sh
+```
+
+Re-snapshot it any time with `./wallpaper/export.sh` (or `./sync.sh`).
 
 **Alfred** and **Keyboard Maestro** carry large, binary, and potentially secret-bearing data, so they are *not* committed here — use each app's own sync instead:
 

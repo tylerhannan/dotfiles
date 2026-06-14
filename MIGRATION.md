@@ -94,11 +94,21 @@ deliberately stores no secrets: nothing to migrate here beyond the sign-in.
 Restored automatically by `install.sh` (committed in this repo):
 
 - **Ghostty:** terminal config (`ghostty/`). The configured font,
-  **BerkeleyMono Nerd Font**, is paid and is *not* installed by this repo —
-  keep the font file in Dropbox and copy it into `~/Library/Fonts` on the new
-  machine (`ghostty/restore.sh` warns if it's missing), or Ghostty falls back.
+  **BerkeleyMono Nerd Font**, is paid and is *not* installed by this repo — nor
+  is it cached anywhere on the old machine, so there is nothing to copy across.
+  Re-download it from your **Berkeley Graphics account** (usgraphics.com; grab
+  the Nerd Font–patched build so the `BerkeleyMono Nerd Font` glyphs resolve)
+  and drop the `.otf`/`.ttf` files into `~/Library/Fonts`. Without it,
+  `ghostty/restore.sh` warns and Ghostty silently falls back to a default.
 - **Karabiner-Elements**, **Rectangle**, **Hyperkey**, **Ice**, **The Clock**,
   **SteerMouse** — see `karabiner/` and `defaults/`.
+- **Desktop wallpaper** (`wallpaper/`) — the built-in dynamic wallpaper choice,
+  restored from `wallpaper/Index.plist`. Reloads `WallpaperAgent`; log out/in if
+  it doesn't update immediately.
+- **System keyboard shortcuts** and **trackpad gestures** — captured in
+  `defaults/` (`com.apple.symbolichotkeys` and the multitouch trackpad domains).
+  These are read at login, so **log out/in** after `install.sh` for the
+  shortcuts and gestures to take full effect.
 
 Sync themselves once you sign in / point them at the sync folder:
 
