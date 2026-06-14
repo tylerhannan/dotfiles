@@ -85,6 +85,8 @@ brew "python@3.12"
 brew "python@3.13"
 # Static analysis tool for shell scripts
 brew "shellcheck"
+# Font editor (Berkeley Mono → Nerd Font patching)
+brew "fontforge"
 # Terminal multiplexer with VT100/ANSI terminal emulation
 brew "screen"
 # Programmatically correct mistyped console commands
@@ -146,7 +148,7 @@ cask "adobe-creative-cloud"
 # Security & network
 cask "bitwarden"
 cask "lastpass"
-cask "tailscale"
+cask "tailscale-app"
 cask "nordvpn"
 cask "yubico-authenticator"
 
@@ -158,9 +160,12 @@ cask "sonos"
 # --- Mac App Store apps (sign into the App Store first) ----------------------
 mas "Byword", id: 420212497
 mas "Deliveries", id: 290986013
+mas "GarageBand", id: 682658836
+mas "iMovie", id: 408981434
 mas "Infuse", id: 1136220934
-mas "Keynote", id: 409183694
-mas "Numbers", id: 409203825
+mas "Keynote", id: 361285480
+mas "Numbers", id: 361304891
+mas "Pages", id: 361309726
 mas "reMarkable", id: 1276493162
 mas "Screen Mirror to TV & Device", id: 1496988766
 mas "The Clock", id: 488764545
