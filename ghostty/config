@@ -45,7 +45,7 @@
 
 
 # Quick Window configuration (HUD style)
-keybind = global:cmd+ctrl+alt+shift+h=toggle_quick_terminal
+keybind = global:cmd+ctrl+alt+shift+tab=toggle_quick_terminal
 
 # Use the Option key as an Alt key to enable backward/forward word shortcuts
 macos-option-as-alt = true
