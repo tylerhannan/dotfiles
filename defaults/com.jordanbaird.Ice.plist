@@ -1334,5 +1334,11 @@
 	<true/>
 	<key>hasMigrated0_8_0</key>
 	<true/>
+	<key>SUAutomaticallyUpdate</key>
+	<false/>
+	<key>SUEnableAutomaticChecks</key>
+	<true/>
+	<key>SUHasLaunchedBefore</key>
+	<true/>
 </dict>
 </plist>
