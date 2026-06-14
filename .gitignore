@@ -21,3 +21,6 @@ Icon
 
 # Machine-local git identity / secrets (pulled in via .gitconfig include)
 .gitconfig.local
+
+# todo.txt (seeded from the Homebrew formula; edit TODO_DIR etc. locally)
+.todo.cfg

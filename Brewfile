@@ -89,6 +89,8 @@ brew "shellcheck"
 brew "screen"
 # Programmatically correct mistyped console commands
 brew "thefuck"
+# todo.txt CLI (todo.sh; config at ~/.todo.cfg)
+brew "todo-txt"
 # Pager/text based browser
 brew "w3m"
 # Internet file retriever

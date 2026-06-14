@@ -63,6 +63,14 @@ echo "Tip: sign into the App Store first so the 'mas' apps install too."
 brew bundle install --verbose --file="$HOME/Brewfile" \
   || echo "brew bundle reported failures (often the mas/App Store apps) — re-run after signing into the App Store."
 
+step "todo.txt config"
+if TODO_CFG="$(brew --prefix todo-txt 2>/dev/null)/todo.cfg" && [ -f "$TODO_CFG" ]; then
+  cp -n "$TODO_CFG" "$HOME/.todo.cfg"
+  echo "ready: ~/.todo.cfg (edit TODO_DIR and other settings there)"
+else
+  echo "skipped — todo-txt not installed yet."
+fi
+
 step "Restore app configs"
 "$DIR/defaults/import.sh" || echo "defaults import skipped/partial."
 "$DIR/karabiner/restore.sh" || echo "karabiner restore skipped."

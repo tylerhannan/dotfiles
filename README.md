@@ -144,7 +144,13 @@ Not covered by the Brewfile, by design:
 * **Chrome extensions** — listed below; the Web Store has no CLI installer.
 * **Org / MDM-managed apps** (Okta Verify, Falcon, Iru) — installed from your IT portal. See [MIGRATION.md](MIGRATION.md).
 
-`~/Dropbox` backs the `t` todo helper and syncs Alfred / Keyboard Maestro settings.
+`~/Dropbox` syncs Alfred / Keyboard Maestro settings.
+
+### todo.txt
+
+`todo-txt` is in the Brewfile; `install.sh` seeds `~/.todo.cfg` from the formula
+(`cp -n`, so an existing file is left alone). The `t` alias in `.aliases` runs
+`todo.sh`. Edit `~/.todo.cfg` to set `TODO_DIR` and other options.
 
 ### Chrome Extensions
 

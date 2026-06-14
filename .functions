@@ -33,8 +33,3 @@ if hash git &>/dev/null; then
     git diff --no-index --color-words "$@"
   }
 fi
-
-# Append to my todo file by simply typing
-function t() {
-  echo "$1" >> ~/Dropbox/Notes/todo.txt
-}
