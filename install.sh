@@ -67,6 +67,7 @@ step "Restore app configs"
 "$DIR/defaults/import.sh" || echo "defaults import skipped/partial."
 "$DIR/karabiner/restore.sh" || echo "karabiner restore skipped."
 "$DIR/ghostty/restore.sh" || echo "ghostty restore skipped."
+"$DIR/wallpaper/restore.sh" || echo "wallpaper restore skipped."
 
 step "macOS system defaults (optional)"
 if [ -t 0 ]; then

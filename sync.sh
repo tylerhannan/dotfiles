@@ -52,6 +52,9 @@ if [ -f "$GHOSTTY_CONF" ]; then
   cp "$GHOSTTY_CONF" "$DIR/ghostty/config"
 fi
 
+echo "==> Refreshing wallpaper config"
+"$DIR/wallpaper/export.sh"
+
 echo
 echo "Note: only Homebrew/App Store-managed software is checked. Apps installed"
 echo "      by hand (drag-to-Applications, vendor installers) won't show as drift"
