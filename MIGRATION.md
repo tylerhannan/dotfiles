@@ -114,8 +114,10 @@ Restored automatically by `install.sh` (committed in this repo):
 
 Sync themselves once you sign in / point them at the sync folder:
 
-- **Cursor / VS Code:** enable Settings Sync (signed-in) — extensions are
-  already installed via the Brewfile.
+- **Cursor:** sign in for AI features. Cursor has no VS Code–style cloud settings
+  sync — copy `~/Library/Application Support/Cursor/User/settings.json` (and
+  `keybindings.json` if needed), or export/import a **Profile** (`Cmd+Shift+P` →
+  **Preferences: Open Profiles (UI)**). Extensions install via the Brewfile.
 - **Alfred:** Preferences → Advanced → "Set preferences folder…" →
   `~/Library/CloudStorage/Dropbox`.
 - **Keyboard Maestro:** Preferences → General → "Macro Sync…" → open
