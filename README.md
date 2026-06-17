@@ -105,7 +105,7 @@ Re-snapshot the current machine any time with `./defaults/export.sh`, then commi
 ./karabiner/restore.sh
 ```
 
-**Ghostty** keeps its config in `~/Library/Application Support/com.mitchellh.ghostty/config` (its font, BerkeleyMono Nerd Font, is paid and installed separately). Quick terminal is on hyper+t via the **Ghostty Quick Terminal** Keyboard Maestro macro — the Ghostty global keybind stays off:
+**Ghostty** keeps its config in `~/Library/Application Support/com.mitchellh.ghostty/config` (its font, **Berkeley Mono** unpatched, is paid and installed separately; Ghostty supplies Nerd icons built-in). Quick terminal is on hyper+t via the **Ghostty Quick Terminal** Keyboard Maestro macro — the Ghostty global keybind stays off:
 
 ```sh
 ./ghostty/restore.sh
