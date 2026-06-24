@@ -23,6 +23,8 @@ brew "ack"
 brew "agg"
 # Record and share terminal sessions
 brew "asciinema"
+# Official Amazon AWS command-line interface
+brew "awscli"
 # Zstandard is a real-time compression algorithm
 brew "zstd"
 # GNU binary tools for native development
@@ -37,6 +39,8 @@ brew "cmake"
 brew "docker"
 # Embeddable SQL OLAP Database Management System
 brew "duckdb"
+# Like neofetch, but much faster because written mostly in C
+brew "fastfetch"
 # Play, record, convert, and stream select audio and video codecs
 brew "ffmpeg"
 # Collection of GNU find, xargs, and locate
