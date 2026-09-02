@@ -123,6 +123,10 @@ Sync themselves once you sign in / point them at the sync folder:
 - **The Clock:** Preferences → Backup/Restore → **Restore from iCloud** (back up
   to iCloud on the old Mac first). World clocks and menu bar layout sync via
   iCloud, not the repo — copying plist files gets overwritten on launch.
+- **IRCCloud (Chrome app):** open [irccloud.com](https://www.irccloud.com/) in
+  Chrome → address-bar install icon (or **⋮ → Cast, save, and share → Install
+  page as app…**). Lands in `~/Applications/Chrome Apps.localized/IRCCloud.app`
+  and shows up in Alfred / Launchpad. Not Brewfile-managed.
 
 ## 7. Org / MDM-managed apps
 

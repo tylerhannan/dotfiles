@@ -142,6 +142,7 @@ The [`Brewfile`](Brewfile) is the **single source of truth** for installed softw
 
 Not covered by the Brewfile, by design:
 * **Chrome extensions** — listed below; the Web Store has no CLI installer.
+* **Chrome installed apps (PWAs)** — e.g. IRCCloud; recreate via “Install page as app” (see below).
 * **Org / MDM-managed apps** (Okta Verify, Falcon, Iru) — installed from your IT portal. See [MIGRATION.md](MIGRATION.md).
 
 ### todo.txt
@@ -160,6 +161,14 @@ Not covered by the Brewfile, by design:
 * [Grammarly](https://chromewebstore.google.com/detail/kbfnbcaeplbcioakkpcpgfkobkghlhen)
 * [SVG Export](https://chromewebstore.google.com/detail/naeaaedieihlkmdajjefioajbbdbdjgp)
 * [Privacy Badger](https://chromewebstore.google.com/detail/pkehgijcmpdhfbdbbnkijodmdjhbjlgp)
+
+### Chrome installed apps (PWAs)
+
+Chrome “Install page as app…” shortcuts don’t migrate. Recreate on a new machine:
+
+* **[IRCCloud](https://www.irccloud.com/)** — open the site → install from the address bar
+  (or **⋮ → Cast, save, and share → Install page as app…**). App lands in
+  `~/Applications/Chrome Apps.localized/IRCCloud.app`.
 
 ### Install the Vim Thesaurus
 
