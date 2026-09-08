@@ -13,6 +13,9 @@
 # VSCode/Cursor extensions. `mas` entries require being signed into the
 # App Store before `brew bundle install`.
 
+# Provides `mk`, the Marked CLI
+tap "ttscoff/thelab"
+
 # Mac App Store command-line interface (lets `brew bundle dump` capture App Store apps as `mas` entries)
 brew "mas"
 # Search tool like grep, but optimized for programmers
@@ -71,6 +74,8 @@ brew "libtool"
 brew "llvm"
 # GUI for vim, made for macOS
 brew "macvim"
+# Marked command-line utility (opens/previews files in Marked)
+brew "ttscoff/thelab/mk"
 # Netwide Assembler (NASM) is an 80x86 assembler
 brew "nasm"
 # Small build system for use with gyp or CMake
@@ -168,6 +173,7 @@ mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
 mas "Infuse", id: 1136220934
 mas "Keynote", id: 361285480
+mas "Marked", id: 6747497179
 mas "Numbers", id: 361304891
 mas "Pages", id: 361309726
 mas "reMarkable", id: 1276493162
