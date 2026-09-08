@@ -13,8 +13,6 @@
 # VSCode/Cursor extensions. `mas` entries require being signed into the
 # App Store before `brew bundle install`.
 
-tap "nikitabobko/tap"
-
 # Mac App Store command-line interface (lets `brew bundle dump` capture App Store apps as `mas` entries)
 brew "mas"
 # Search tool like grep, but optimized for programmers
@@ -51,6 +49,8 @@ brew "gcc"
 brew "gh"
 # Distributed revision control system
 brew "git"
+# Render markdown on the CLI
+brew "glow"
 # GNU grep, egrep and fgrep
 brew "grep"
 # World's fastest and most advanced password recovery utility
