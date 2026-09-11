@@ -10,14 +10,10 @@ alias ShowDesktop="defaults write com.apple.finder CreateDesktop -bool true && k
 # opaque/no-blur for projectors. open -na = separate process. Overrides only.
 # Flags are process-wide — Cmd+N in this instance stays demo-styled. Close the
 # window (quit-after-last-window-closed) so Dock/Alfred reopen a normal Ghostty.
+# window-save-state=never + explicit size: 400pt bottom padding on a restored
+# small window yields a zero-height grid and no usable window.
 # Padding is points (not rows) — retune per display (400 ≈ mid-screen here).
-alias demo='open -na Ghostty.app --args \
-  --quit-after-last-window-closed=true \
-  --window-padding-y=10,400 \
-  --window-padding-color=background \
-  --background-opacity=1 \
-  --background-blur-radius=0 \
-  --font-size=20'
+alias demo='open -na /Applications/Ghostty.app --args --quit-after-last-window-closed=true --window-save-state=never --window-width=120 --window-height=40 --window-padding-y=10,400 --window-padding-color=background --background-opacity=1 --background-blur-radius=0 --font-size=20'
 
 # Turn on/off notification center
 alias SoAnnoying="launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist"
