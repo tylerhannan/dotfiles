@@ -6,6 +6,16 @@ alias kthxbai='exit'
 alias HideDesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
 alias ShowDesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
 
+# Demo Ghostty: bottom padding keeps the prompt above seated sightlines;
+# opaque/no-blur for projectors. open -na = separate process. Overrides only.
+# Padding is points (not rows) — retune per display (400 ≈ mid-screen here).
+alias demo='open -na Ghostty.app --args \
+  --window-padding-y=10,400 \
+  --window-padding-color=background \
+  --background-opacity=1 \
+  --background-blur-radius=0 \
+  --font-size=20'
+
 # Turn on/off notification center
 alias SoAnnoying="launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist"
 alias BugMeAgain="launchctl load -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist"
