@@ -8,8 +8,11 @@ alias ShowDesktop="defaults write com.apple.finder CreateDesktop -bool true && k
 
 # Demo Ghostty: bottom padding keeps the prompt above seated sightlines;
 # opaque/no-blur for projectors. open -na = separate process. Overrides only.
+# Flags are process-wide — Cmd+N in this instance stays demo-styled. Close the
+# window (quit-after-last-window-closed) so Dock/Alfred reopen a normal Ghostty.
 # Padding is points (not rows) — retune per display (400 ≈ mid-screen here).
 alias demo='open -na Ghostty.app --args \
+  --quit-after-last-window-closed=true \
   --window-padding-y=10,400 \
   --window-padding-color=background \
   --background-opacity=1 \
