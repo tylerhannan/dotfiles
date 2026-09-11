@@ -15,10 +15,6 @@ alias ShowDesktop="defaults write com.apple.finder CreateDesktop -bool true && k
 # Padding is points (not rows) — retune per display (400 ≈ mid-screen here).
 alias demo='open -na /Applications/Ghostty.app --args --quit-after-last-window-closed=true --window-save-state=never --window-width=120 --window-height=40 --window-padding-y=10,400 --window-padding-color=background --background-opacity=1 --background-blur-radius=0 --font-size=20'
 
-# Turn on/off notification center
-alias SoAnnoying="launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist"
-alias BugMeAgain="launchctl load -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist"
-
 # Mute/unmute system UI sounds (screenshot, Trash, boot chime, etc.)
 alias QuietMac='defaults write NSGlobalDomain com.apple.sound.uiaudio.enabled -bool false && defaults write com.apple.screencapture disable-sound -bool true && sudo nvram SystemAudioVolume=" " 2>/dev/null; killall SystemUIServer 2>/dev/null || true'
 alias LoudMac='defaults write NSGlobalDomain com.apple.sound.uiaudio.enabled -bool true && defaults write com.apple.screencapture disable-sound -bool false && sudo nvram -d SystemAudioVolume 2>/dev/null; killall SystemUIServer 2>/dev/null || true'
