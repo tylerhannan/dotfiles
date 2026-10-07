@@ -102,6 +102,8 @@ brew "screen"
 brew "thefuck"
 # todo.txt CLI (todo.sh; config at ~/.todo.cfg)
 brew "todo-txt"
+# Extremely fast Python package installer and resolver, written in Rust
+brew "uv"
 # Pager/text based browser
 brew "w3m"
 # Internet file retriever

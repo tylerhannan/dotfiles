@@ -27,18 +27,22 @@ defaults write NSGlobalDomain AppleInterfaceStyle -string "Dark"
 # Dock                                                                        #
 ###############################################################################
 
-# Auto-hide, with small icons and no magnification.
+# Auto-hide, with small icons that magnify on hover.
 defaults write com.apple.dock autohide -bool true
 defaults write com.apple.dock tilesize -int 16
-defaults write com.apple.dock largesize -int 16
-defaults write com.apple.dock magnification -bool false
+defaults write com.apple.dock largesize -int 43
+defaults write com.apple.dock magnification -bool true
 
 # Minimize windows into their app icon; don't show recent apps.
 defaults write com.apple.dock minimize-to-application -bool true
 defaults write com.apple.dock show-recents -bool false
 
-# Unpin all apps — Dock shows only running apps (plus Trash).
+# Pin only NordVPN — otherwise the Dock shows just running apps (plus Trash).
 defaults write com.apple.dock persistent-apps -array
+if [ -d "/Applications/NordVPN.app" ]; then
+  defaults write com.apple.dock persistent-apps -array-add \
+    '<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/NordVPN.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>'
+fi
 
 # Don't reorder Spaces by most-recent use.
 defaults write com.apple.dock mru-spaces -bool false

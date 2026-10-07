@@ -128,7 +128,7 @@ Re-snapshot it any time with `./wallpaper/export.sh` (or `./sync.sh`).
 
 ### Step 5: macOS system defaults (optional)
 
-`.macos` sets user-domain system preferences. It mirrors this machine (Dark mode, a small auto-hiding Dock, tap-to-click, column-view Finder, analog menu-bar clock, …) plus a few broadly-useful extras (fast key repeat, screenshots to `~/Screenshots`, fewer .DS_Store files, expanded save/print panels). Review it first, then run it:
+`.macos` sets user-domain system preferences. It mirrors this machine (Dark mode, a small auto-hiding, magnifying Dock, tap-to-click, column-view Finder, analog menu-bar clock, …) plus a few broadly-useful extras (fast key repeat, screenshots to `~/Screenshots`, fewer .DS_Store files, expanded save/print panels). Review it first, then run it:
 
 ```sh
 ./.macos

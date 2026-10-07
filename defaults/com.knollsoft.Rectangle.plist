@@ -57,7 +57,7 @@
 	<key>lastTwoThirds</key>
 	<dict/>
 	<key>lastVersion</key>
-	<string>102</string>
+	<string>106</string>
 	<key>launchOnLogin</key>
 	<true/>
 	<key>leftHalf</key>
@@ -117,6 +117,8 @@
 	<dict/>
 	<key>topRight</key>
 	<dict/>
+	<key>unsnapRestore</key>
+	<integer>2</integer>
 	<key>windowSnapping</key>
 	<integer>2</integer>
 </dict>
