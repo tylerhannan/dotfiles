@@ -117,7 +117,7 @@ Re-snapshot the current machine any time with `./defaults/export.sh`, then commi
 ./wallpaper/restore.sh
 ```
 
-Re-snapshot it any time with `./wallpaper/export.sh` (or `./sync.sh`).
+Re-snapshot it any time with `./wallpaper/export.sh` (`./sync.sh` intentionally skips it).
 
 **The Clock** syncs world clocks and menu bar layout via **iCloud**, not this repo. On the old Mac: Preferences → Backup/Restore → Back up to iCloud. On the new Mac: Restore from iCloud.
 
