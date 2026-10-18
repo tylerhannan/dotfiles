@@ -58,8 +58,6 @@ brew "glow"
 brew "grep"
 # World's fastest and most advanced password recovery utility
 brew "hashcat"
-# C/C++ and Java libraries for Unicode and globalization
-brew "icu4c@76"
 # CLI for the Jinja2 templating language
 brew "jinja2-cli"
 # Lightweight and flexible command-line JSON processor
