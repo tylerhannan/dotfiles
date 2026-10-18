@@ -114,10 +114,11 @@ brew "yt-dlp"
 # --- GUI applications --------------------------------------------------------
 # `brew bundle dump --force` will re-sort these and add description comments.
 # App Store-only apps (Things 3, Infuse, Byword, ...) and org/MDM-managed apps
-# (Okta Verify, Falcon, Iru) are intentionally not listed here. See MIGRATION.md.
+# (Okta Verify, Falcon, Iru) are intentionally not listed here. Cursor is also
+# left out: it updates itself, which leaves brew's cask stuck on an old version
+# and breaks `brew upgrade`. Install it from cursor.com. See MIGRATION.md.
 
 # Editors & dev
-cask "cursor"
 cask "visual-studio-code"
 cask "ghostty"
 cask "orbstack"

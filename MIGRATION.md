@@ -112,7 +112,8 @@ Restored automatically by `install.sh` (committed in this repo):
 
 Sync themselves once you sign in / point them at the sync folder:
 
-- **Cursor:** sign in for AI features. Cursor has no VS Code–style cloud settings
+- **Cursor:** not in the Brewfile (it self-updates) — download from
+  cursor.com. Sign in for AI features. Cursor has no VS Code–style cloud settings
   sync — copy `~/Library/Application Support/Cursor/User/settings.json` (and
   `keybindings.json` if needed), or export/import a **Profile** (`Cmd+Shift+P` →
   **Preferences: Open Profiles (UI)**). Extensions install via the Brewfile.
