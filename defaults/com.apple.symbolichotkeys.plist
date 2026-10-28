@@ -186,7 +186,7 @@
 				<array>
 					<integer>65535</integer>
 					<integer>126</integer>
-					<integer>8650752</integer>
+					<integer>10354688</integer>
 				</array>
 				<key>type</key>
 				<string>standard</string>
@@ -195,7 +195,7 @@
 		<key>34</key>
 		<dict>
 			<key>enabled</key>
-			<true/>
+			<false/>
 			<key>value</key>
 			<dict>
 				<key>parameters</key>
