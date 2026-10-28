@@ -93,7 +93,7 @@ deliberately stores no secrets: nothing to migrate here beyond the sign-in.
 
 Restored automatically by `install.sh` (committed in this repo):
 
-- **Ghostty:** terminal config (`ghostty/`). Quick terminal is hyper+t via the
+- **Ghostty:** terminal config (`ghostty/`). Quick terminal is hyper+space via the
   **Ghostty Quick Terminal** Keyboard Maestro macro (not a Ghostty global keybind).
   The configured font,
   **Berkeley Mono** (unpatched), is paid and is *not* installed by this repo.

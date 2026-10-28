@@ -72,11 +72,21 @@
 		<integer>1966080</integer>
 	</dict>
 	<key>maximize</key>
-	<dict/>
+	<dict>
+		<key>keyCode</key>
+		<real>3.0</real>
+		<key>modifierFlags</key>
+		<real>1966080.0</real>
+	</dict>
 	<key>maximizeHeight</key>
 	<dict/>
 	<key>nextDisplay</key>
-	<dict/>
+	<dict>
+		<key>keyCode</key>
+		<real>14.0</real>
+		<key>modifierFlags</key>
+		<real>1966080.0</real>
+	</dict>
 	<key>previousDisplay</key>
 	<dict/>
 	<key>reflowTodo</key>

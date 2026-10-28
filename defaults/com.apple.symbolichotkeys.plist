@@ -192,6 +192,22 @@
 				<string>standard</string>
 			</dict>
 		</dict>
+		<key>33</key>
+		<dict>
+			<key>enabled</key>
+			<string>1</string>
+			<key>value</key>
+			<dict>
+				<key>parameters</key>
+				<array>
+					<string>65535</string>
+					<string>125</string>
+					<string>10354688</string>
+				</array>
+				<key>type</key>
+				<string>standard</string>
+			</dict>
+		</dict>
 		<key>34</key>
 		<dict>
 			<key>enabled</key>
@@ -203,6 +219,22 @@
 					<integer>65535</integer>
 					<integer>126</integer>
 					<integer>8781824</integer>
+				</array>
+				<key>type</key>
+				<string>standard</string>
+			</dict>
+		</dict>
+		<key>35</key>
+		<dict>
+			<key>enabled</key>
+			<string>0</string>
+			<key>value</key>
+			<dict>
+				<key>parameters</key>
+				<array>
+					<string>65535</string>
+					<string>125</string>
+					<string>8781824</string>
 				</array>
 				<key>type</key>
 				<string>standard</string>
