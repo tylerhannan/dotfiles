@@ -91,7 +91,7 @@ brew bundle dump --force --file=~/Brewfile
 
 After the apps are installed (Step 3), restore their settings from this repo.
 
-**`defaults`-based settings** are captured as plists under `defaults/` — third-party apps (Rectangle, Hyperkey, Ice, SteerMouse) and a few macOS system domains: system keyboard shortcuts (`com.apple.symbolichotkeys`) and trackpad gestures (`com.apple.AppleMultitouchTrackpad`, `com.apple.driver.AppleBluetoothMultitouch.trackpad`). Restore them all at once:
+**`defaults`-based settings** are captured as plists under `defaults/` — third-party apps (Rectangle, Hyperkey, Ice, SteerMouse) and a few macOS system domains: system keyboard shortcuts (`com.apple.symbolichotkeys`), Services menu toggles (`pbs`), and trackpad gestures (`com.apple.AppleMultitouchTrackpad`, `com.apple.driver.AppleBluetoothMultitouch.trackpad`). Restore them all at once:
 
 ```sh
 ./defaults/import.sh
