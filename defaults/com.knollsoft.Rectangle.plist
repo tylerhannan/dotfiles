@@ -23,12 +23,16 @@
 		<integer>1966080</integer>
 	</dict>
 	<key>center</key>
+	<dict/>
+	<key>centerHalf</key>
 	<dict>
 		<key>keyCode</key>
-		<integer>8</integer>
+		<real>8.0</real>
 		<key>modifierFlags</key>
-		<integer>1966080</integer>
+		<real>1966080.0</real>
 	</dict>
+	<key>centerHalfCycles</key>
+	<integer>1</integer>
 	<key>centerThird</key>
 	<dict/>
 	<key>cycleSizesIsChanged</key>
@@ -57,7 +61,7 @@
 	<key>lastTwoThirds</key>
 	<dict/>
 	<key>lastVersion</key>
-	<string>106</string>
+	<string>111</string>
 	<key>launchOnLogin</key>
 	<true/>
 	<key>leftHalf</key>

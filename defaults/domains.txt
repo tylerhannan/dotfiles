@@ -15,6 +15,9 @@ jp.plentycom.app.SteerMouse
 # System keyboard shortcuts (Spotlight, Mission Control, screenshots, input
 # switching, …). Importing replaces the whole set with the captured one.
 com.apple.symbolichotkeys
+# Services menu toggles (e.g. the Chinese text converters, disabled because
+# their default shortcuts are hyper+c / hyper+t).
+pbs
 # Trackpad gestures: tap-to-click, two/three/four-finger swipes, pinch, rotate.
 # Built-in trackpad settings live in the normal (non-ByHost) domains, so they
 # export/import cleanly. Mission Control/App Exposé gesture *toggles* are macOS
