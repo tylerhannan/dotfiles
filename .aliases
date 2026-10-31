@@ -62,3 +62,6 @@ alias t='todo.sh'
 alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
 alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
 
+
+# Internet speed test (built-in macOS, Monterey+)
+alias fast='networkQuality'
