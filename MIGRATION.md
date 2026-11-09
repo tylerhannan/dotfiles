@@ -100,7 +100,7 @@ Restored automatically by `install.sh` (committed in this repo):
   Re-download from your **Berkeley Graphics account** (usgraphics.com) and drop
   the `.otf`/`.ttf` files into `~/Library/Fonts`. Ghostty scales its built-in
   Nerd icons to match — do not use a self-patched Nerd Font (broken spacing).
-- **Karabiner-Elements**, **Rectangle**, **Hyperkey**, **Ice**, **SteerMouse** —
+- **Karabiner-Elements**, **Rectangle**, **Hyperkey**, **Ice** —
   see `karabiner/` and `defaults/`.
 - **Desktop wallpaper** (`wallpaper/`) — the built-in dynamic wallpaper choice,
   restored from `wallpaper/Index.plist`. Reloads `WallpaperAgent`; log out/in if

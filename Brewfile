@@ -133,7 +133,6 @@ cask "keyboard-maestro"
 cask "karabiner-elements"
 cask "hyperkey"
 cask "jordanbaird-ice"
-cask "steermouse"
 
 # Browsers
 cask "google-chrome"

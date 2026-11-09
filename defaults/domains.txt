@@ -9,7 +9,6 @@
 com.knollsoft.Rectangle
 com.knollsoft.Hyperkey
 com.jordanbaird.Ice
-jp.plentycom.app.SteerMouse
 
 # --- macOS system settings --------------------------------------------------
 # System keyboard shortcuts (Spotlight, Mission Control, screenshots, input
