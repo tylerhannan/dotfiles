@@ -21,8 +21,7 @@ LINKS=(
   .bash_prompt
   .functions
   .gitconfig
-  .vimrc
-  .vim
+  .config/nvim
   Brewfile
 )
 
@@ -49,15 +48,13 @@ link_one() {
     echo "backup: $name -> $BACKUP_DIR/"
   fi
 
+  mkdir -p "$(dirname "$dest")"
   ln -s "$src" "$dest"
   echo "link:   $name -> $src"
 }
 
 doIt() {
   echo "Linking dotfiles from $DOTFILES_DIR into $HOME"
-
-  # Make sure the Vim plugin submodules are populated.
-  git -C "$DOTFILES_DIR" submodule update --init --recursive
 
   # Enable the repo's shellcheck pre-commit hook for this clone.
   git -C "$DOTFILES_DIR" config core.hooksPath hooks

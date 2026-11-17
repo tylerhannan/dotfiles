@@ -11,9 +11,7 @@ I get rather tired of rebuilding my machine every time I change it or inadverten
 
 In short: `install.sh` does the work, `MIGRATION.md` is the checklist that wraps it, and this README is the reference behind both.
 
-This includes the following Vim plugins:
-* [NERD Tree](https://github.com/scrooloose/nerdtree)
-* [vim-solarized8](https://github.com/lifepillar/vim-solarized8)
+The editor is [Neovim](https://neovim.io) with [LazyVim](https://www.lazyvim.org), configured in `.config/nvim` (see [Neovim](#neovim-lazyvim) below). `vim` and `vi` are aliased to `nvim`.
 
 Setup
 -----
@@ -23,7 +21,7 @@ Setup
 One command does the whole automated setup — Command Line Tools, Homebrew, dotfile symlinks, `brew bundle install` (formulae + casks + editor extensions), and app-config restore:
 
 ```sh
-git clone --recurse-submodules https://github.com/tylerhannan/dotfiles.git
+git clone https://github.com/tylerhannan/dotfiles.git
 cd dotfiles
 ./install.sh
 ```
@@ -53,7 +51,7 @@ xcode-select --install
 `bootstrap.sh` symlinks the dotfiles (including the `Brewfile`) into your home directory, so edits in `$HOME` and this repo stay in sync. Any pre-existing files are moved to `~/.dotfiles-backup/<timestamp>/` first.
 
 ```sh
-git clone --recurse-submodules https://github.com/tylerhannan/dotfiles.git
+git clone https://github.com/tylerhannan/dotfiles.git
 cd dotfiles
 ./bootstrap.sh
 ```
@@ -63,12 +61,6 @@ Set your git identity in the untracked local file (the tracked `.gitconfig` incl
 ```sh
 git config --file ~/.gitconfig.local user.name "Your Name Here"
 git config --file ~/.gitconfig.local user.email email@domain.com
-```
-
-If you cloned without `--recurse-submodules` (so the Vim plugins under `.vim/pack/plugins/start` are empty), pull them in with:
-
-```sh
-git submodule update --init --recursive
 ```
 
 ### Step 3: Install everything from the Brewfile
@@ -170,18 +162,18 @@ Chrome “Install page as app…” shortcuts don’t migrate. Recreate on a new
   (or **⋮ → Cast, save, and share → Install page as app…**). App lands in
   `~/Applications/Chrome Apps.localized/IRCCloud.app`.
 
-### Install the Vim Thesaurus
+### Neovim (LazyVim)
 
-A small extra that would be silly to embed as a submodule or track in this repo:
+`bootstrap.sh` links `.config/nvim` to `~/.config/nvim`. The first time you run `nvim`, LazyVim installs its plugins, language servers, and syntax parsers (give it a minute, then restart). It relies on `ripgrep`, `fd`, `fzf`, `lazygit`, and `tree-sitter-cli`, all in the Brewfile.
 
-```sh
-cd ~/.vim
-mkd thesaurus
-wget https://www.gutenberg.org/files/3202/files/mthesaur.txt
-wget https://www.gutenberg.org/files/3202/files/roget13a.txt
-```
+What's switched on, and where:
 
-(The old `mthes10.zip` URL on Gutenberg 404s; these are the same Moby Thesaurus files from ebook #3202.)
+* Language support for SQL, Python, TypeScript, JSON, Markdown, and shell (`lua/config/lazy.lua`, `lua/plugins/shell.lua`).
+* Solarized Dark to match Ghostty (`lua/plugins/colorscheme.lua`).
+* Markdown, text, and HTML files soft-wrap and spell-check, so paragraphs paste into Google Docs as single lines. Spelling accepts British and American English (`lua/config/options.lua`, `lua/config/autocmds.lua`).
+* No format-on-save; format a file on demand with `<space>cf`.
+
+Handy keys: `<space>` and wait shows every shortcut, `<space><space>` finds files, `<space>/` searches the project, `<space>e` opens the file tree, `<space>gg` opens lazygit, `<space>uz` is zen mode for writing, and `:Tutor` is the built-in refresher. `:Lazy` updates plugins and `:Mason` manages language servers.
 
 ## Development
 

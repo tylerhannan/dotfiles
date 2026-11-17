@@ -16,6 +16,10 @@ shopt -s histappend
 
 export PATH=/usr/local/bin:$PATH
 
+# Neovim (LazyVim) everywhere, including git commit messages
+export EDITOR=nvim
+export VISUAL=nvim
+
 # Regionalisation Sucks
 export LANG=en_US.UTF-8
 

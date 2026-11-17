@@ -3,7 +3,7 @@
 # install.sh — one-shot new-machine setup.
 #
 # Run this after cloning the repo:
-#   git clone --recurse-submodules https://github.com/tylerhannan/dotfiles.git
+#   git clone https://github.com/tylerhannan/dotfiles.git
 #   cd dotfiles
 #   ./install.sh
 #
@@ -35,9 +35,6 @@ elif [ -x /usr/local/bin/brew ]; then
   eval "$(/usr/local/bin/brew shellenv)"
 fi
 echo "ready: $(brew --version | head -1)"
-
-step "Vim plugin submodules"
-git -C "$DIR" submodule update --init --recursive
 
 step "Symlink dotfiles into \$HOME"
 "$DIR/bootstrap.sh" --force

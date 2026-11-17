@@ -65,3 +65,7 @@ alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && kil
 
 # Internet speed test (built-in macOS, Monterey+)
 alias fast='networkQuality'
+
+# Muscle memory: vim means Neovim now
+alias vim='nvim'
+alias vi='nvim'

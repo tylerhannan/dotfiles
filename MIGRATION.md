@@ -12,7 +12,7 @@ file is the checklist for the parts that can't (or shouldn't) be scripted.
 ## 1. Run the automated setup
 
 ```sh
-git clone --recurse-submodules https://github.com/tylerhannan/dotfiles.git
+git clone https://github.com/tylerhannan/dotfiles.git
 cd dotfiles
 ./install.sh
 ```

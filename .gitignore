@@ -5,13 +5,11 @@
 Icon
 ._*
 
-# Vim
+# Vim / Neovim swap files
 *.swp
 *.swo
 *~
 .netrwhist
-.vim/backups/
-.vim/thesaurus/
 
 # Editor / misc cruft
 *.bak

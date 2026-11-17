@@ -44,8 +44,12 @@ brew "duckdb"
 brew "fastfetch"
 # Play, record, convert, and stream select audio and video codecs
 brew "ffmpeg"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
 # Collection of GNU find, xargs, and locate
 brew "findutils"
+# Command-line fuzzy finder written in Go
+brew "fzf"
 # GNU compiler collection
 brew "gcc"
 # GitHub command-line tool
@@ -62,6 +66,8 @@ brew "hashcat"
 brew "jinja2-cli"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
+# Simple terminal UI for git commands
+brew "lazygit"
 # Open-source, cross-platform JavaScript runtime environment
 brew "node"
 # Interactive environments for writing and running code
@@ -72,12 +78,12 @@ brew "libtool"
 brew "llvm"
 # LLVM Project Linker
 brew "lld"
-# GUI for vim, made for macOS
-brew "macvim"
 # Marked command-line utility (opens/previews files in Marked)
 brew "ttscoff/thelab/mk"
 # Netwide Assembler (NASM) is an 80x86 assembler
 brew "nasm"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
 # Small build system for use with gyp or CMake
 brew "ninja"
 # Create, run, and share large language models (LLMs)
@@ -94,6 +100,8 @@ brew "python@3.11"
 brew "python@3.12"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.13"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
 # Static analysis tool for shell scripts
 brew "shellcheck"
 # Font editor (Berkeley Mono → Nerd Font patching)
@@ -104,6 +112,8 @@ brew "screen"
 brew "thefuck"
 # todo.txt CLI (todo.sh; config at ~/.todo.cfg)
 brew "todo-txt"
+# Parser generator tool (LazyVim compiles syntax parsers with it)
+brew "tree-sitter-cli"
 # Extremely fast Python package installer and resolver, written in Rust
 brew "uv"
 # Pager/text based browser
