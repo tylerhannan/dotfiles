@@ -26,6 +26,8 @@ brew "agg"
 brew "asciinema"
 # Official Amazon AWS command-line interface
 brew "awscli"
+# Clone of cat(1) with syntax highlighting and Git integration
+brew "bat"
 # Zstandard is a real-time compression algorithm
 brew "zstd"
 # GNU binary tools for native development
@@ -164,7 +166,6 @@ cask "yubico-authenticator"
 # Storage, sync & utilities
 cask "dropbox"
 cask "appcleaner"
-cask "sonos"
 
 # --- Mac App Store apps (sign into the App Store first) ----------------------
 mas "Byword", id: 420212497
