@@ -72,6 +72,8 @@ brew "jupyterlab"
 brew "libtool"
 # Next-gen compiler infrastructure
 brew "llvm"
+# LLVM Project Linker
+brew "lld"
 # GUI for vim, made for macOS
 brew "macvim"
 # Marked command-line utility (opens/previews files in Marked)
@@ -80,6 +82,8 @@ brew "ttscoff/thelab/mk"
 brew "nasm"
 # Small build system for use with gyp or CMake
 brew "ninja"
+# Create, run, and share large language models (LLMs)
+brew "ollama"
 # Paragraph reflow for email
 brew "par"
 # Execute binaries from Python packages in isolated environments
