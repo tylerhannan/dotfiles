@@ -38,8 +38,6 @@ brew "gettext"
 brew "ccache"
 # Cross-platform make
 brew "cmake"
-# Pack, ship and run any application as a lightweight container
-brew "docker"
 # Embeddable SQL OLAP Database Management System
 brew "duckdb"
 # Like neofetch, but much faster because written mostly in C
